@@ -1,8 +1,8 @@
-// Diabmukt - "What makes Diabmukt Different?" Section
+// MommyFit - "What makes MommyFit Different?" Section
 
 import { useNavigate } from "react-router-dom";
 import { getSubscriptionRedirect } from "../../../../utils/subscriptionGuard";
-import whatIsYogaT20Img from "../../../../assets/yogaman.png";
+import whatIsYogaT20Img from "../../../../assets/yogaGirl.png";
 import dailyTrackingImg from "../../../../assets/daily-tracking-phone.png";
 import doctorConsultImg from "../../../../assets/doctor-consult.png";
 
@@ -10,7 +10,7 @@ export default function ConditionsSection() {
   const navigate = useNavigate();
 
   const handleStartJourney = () => {
-    const intendedPath = "/programs/diabmukt/tenure";
+    const intendedPath = "/programs/mommyfit/tenure";
     const redirect = getSubscriptionRedirect(intendedPath);
     navigate(redirect || intendedPath);
   };
@@ -24,13 +24,14 @@ export default function ConditionsSection() {
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* HEADING */}
         <div className="text-center mb-6 sm:mb-8 lg:mb-10">
-          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#0F172A]">
-            What makes <span className="text-[#4F46E5]">Diabmukt</span> Different ?
+          <h2 className="text-xl sm:text-3xl lg:text-4xl font-bold text-[#2D3D4A]">
+            What makes <span className="text-[#E27BA3]">MommyFit</span>{" "}
+            Different ?
           </h2>
         </div>
 
         {/* CARD 1 — Select a Program */}
-        <div className="bg-[#4F46E5] rounded-3xl overflow-hidden mb-4 sm:mb-5">
+        <div className="bg-[#D98BA8] rounded-3xl overflow-hidden mb-4 sm:mb-5">
           <div className="grid grid-cols-1 md:grid-cols-2 items-center px-5 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-10 gap-4 md:gap-6">
             {/* Text */}
             <div className="text-white text-left">
@@ -47,29 +48,29 @@ export default function ConditionsSection() {
               </ul>
               <button
                 onClick={handleStartJourney}
-                className="bg-white hover:bg-[#F6F8FC] text-[#4F46E5] text-xs sm:text-sm font-semibold px-6 sm:px-7 py-2.5 rounded-full transition-colors shadow-sm"
+                className="bg-white hover:bg-[#FBEAF1] text-[#E27BA3] text-xs sm:text-sm font-semibold px-6 sm:px-7 py-2.5 rounded-full transition-colors shadow-sm"
               >
                 Start Journey Today
               </button>
             </div>
 
             {/* Image */}
-            <div className="relative h-[180px] lg:h-[280px] overflow-hidden flex justify-center md:justify-end">
-             <img
-  src={whatIsYogaT20Img}
-  alt="Yoga pose"
-  className="
-    absolute
-    bottom-0
-    w-[420px]
-    sm:w-[400px]
-    lg:w-[560px]
-    h-auto
-    object-contain
-    -scale-x-100
-    [filter:drop-shadow(20px_0_12px_rgba(0,0,0,0.35))]
-  "
-/>
+            {/* Image */}
+            <div className="relative h-[150px] lg:h-[300px] flex justify-center md:justify-end items-end overflow-visible">
+              <img
+                src={whatIsYogaT20Img}
+                alt="Yoga pose"
+                className="
+                w-[340px]
+                sm:w-[420px]
+                lg:w-[620px]
+                h-auto
+                object-contain
+                -scale-x-100
+                translate-y-3
+                [filter:drop-shadow(0_35px_30px_rgba(0,0,0,0.18))]
+              "
+              />
             </div>
           </div>
         </div>
@@ -77,7 +78,7 @@ export default function ConditionsSection() {
         {/* CARD 2 + 3 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
           {/* Daily Tracking */}
-          <div className="bg-[#4F46E5] rounded-3xl overflow-hidden relative min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]">
+          <div className="bg-[#D98BA8] rounded-3xl overflow-hidden relative min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]">
             <div className="px-5 sm:px-7 lg:px-8 py-6 sm:py-7 lg:py-8 flex flex-col justify-center text-white relative z-10 max-w-[65%] sm:max-w-[60%] h-full">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 leading-tight">
                 Daily
@@ -115,7 +116,7 @@ export default function ConditionsSection() {
           </div>
 
           {/* Doctor Consultation */}
-          <div className="bg-[#4F46E5] rounded-3xl overflow-hidden relative min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]">
+          <div className="bg-[#D98BA8] rounded-3xl overflow-hidden relative min-h-[260px] sm:min-h-[300px] lg:min-h-[340px]">
             <div className="px-5 sm:px-7 lg:px-8 py-6 sm:py-7 lg:py-8 flex flex-col justify-center text-white relative z-10 max-w-[60%] sm:max-w-[55%] h-full">
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 leading-tight">
                 Doctor
@@ -126,7 +127,7 @@ export default function ConditionsSection() {
               </p>
               <button
                 onClick={handleConsultDoctor}
-                className="bg-white hover:bg-[#F6F8FC] text-[#4F46E5] text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 rounded-full transition-colors shadow-sm self-start"
+                className="bg-white hover:bg-[#FBEAF1] text-[#E27BA3] text-xs sm:text-sm font-semibold px-4 sm:px-5 py-2 rounded-full transition-colors shadow-sm self-start"
               >
                 Get Consult Now
               </button>

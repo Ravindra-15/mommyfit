@@ -10,40 +10,40 @@ const benefits = [
     title: "Health Activity Tracking",
     description: "Build a clear, historical record of your wellness journey.",
     icon: Heart,
-    color: "text-[#4F46E5]",
-    bg: "bg-[#F3F1FF]",
+    color: "text-[#E27BA3]",
+    bg: "bg-[#FBEAF1]",
   },
   {
     id: 2,
     title: "Exercise Tracking",
     description: "Watch your daily habits visually close their Targets!",
     icon: Activity,
-    color: "text-[#4F46E5]",
-    bg: "bg-[#F3F1FF]",
+    color: "text-[#E27BA3]",
+    bg: "bg-[#FBEAF1]",
   },
   {
     id: 3,
     title: "Stand & Move Reminder",
     description: "Experience the motivating energy of group practices.",
     icon: Bell,
-    color: "text-[#4F46E5]",
-    bg: "bg-[#F3F1FF]",
+    color: "text-[#E27BA3]",
+    bg: "bg-[#FBEAF1]",
   },
   {
     id: 4,
     title: "Community Sessions",
     description: "Experience the motivating energy of group practices.",
     icon: Users,
-    color: "text-[#4F46E5]",
-    bg: "bg-[#F3F1FF]",
+    color: "text-[#E27BA3]",
+    bg: "bg-[#FBEAF1]",
   },
   {
     id: 5,
     title: "Laughing Therapy",
     description: "Release built-up stress and instantly boost your mood.",
     icon: Smile,
-    color: "text-[#4F46E5]",
-    bg: "bg-[#F3F1FF]",
+    color: "text-[#E27BA3]",
+    bg: "bg-[#FBEAF1]",
   },
 ];
 
@@ -114,7 +114,7 @@ useEffect(() => {
         {/* HEADING */}
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#111827] mb-2">
-  What will you <span className="text-[#4F46E5]">get ?</span>
+  What will you <span className="text-[#E27BA3]">get ?</span>
 </h2>
           <p className="text-[#6B7280] text-xs sm:text-sm italic">
             "Lets List out the Benefits of the Yoga T20 Program"

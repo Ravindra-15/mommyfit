@@ -16,6 +16,7 @@ import CallbackSection from "./sections/CallbackSection";
 import ReferAndEarnSection from "./sections/ReferAndEarnSection";
 import WelcomePopup from "./components/WelcomePopup";
 import TrackDailyWinsSection from "./sections/TrackDailyWinsSection";
+import ExpertSupportSection from "./sections/ExpertSupportSection";
 
 export default function LandingPage() {
   return (
@@ -26,6 +27,7 @@ export default function LandingPage() {
       <main className="flex-1 w-full">
         <HeroSection />
         <ConditionsSection />
+        <ExpertSupportSection></ExpertSupportSection>
         <OurStructureSection />
         <HealingCTASection />
         <TrackDailyWinsSection />

@@ -39,7 +39,7 @@ export default function FAQSection() {
           <div className="w-full lg:w-[40%]">
           <h2 className="font-bold leading-[1.15] mb-4 text-3xl sm:text-4xl lg:text-[38px] xl:text-[42px] lg:whitespace-nowrap">
   <span className="text-[#083B44]">Frequently Asked </span>
-  <span className="text-[#4F46E5]">Questions</span>
+  <span className="text-[#E27BA3]">Questions</span>
 </h2>
 
 <p className="text-[#083B44] text-sm sm:text-base leading-relaxed max-w-[420px] mb-6 lg:mb-8">

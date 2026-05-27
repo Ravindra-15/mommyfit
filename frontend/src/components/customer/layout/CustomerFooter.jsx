@@ -88,7 +88,7 @@ const FooterLink = ({ link }) => {
   };
 
   const className =
-  "text-sm text-[#083B44] hover:text-[#4F46E5] transition-colors";
+  "text-sm text-[#083B44] hover:text-[#E27BA3]  transition-colors";
 
   if (link.type === "external") {
     return (
@@ -139,7 +139,7 @@ const CustomerFooter = () => {
                 <span className="font-bold">Email:</span>{" "}
                 <a
                   href="mailto:support@zealtho.com"
-                  className="hover:text-[#4F46E5] transition-colors"
+                  className="hover:text-[#E27BA3]  transition-colors"
                 >
                   support@zealtho.com
                 </a>
@@ -165,7 +165,7 @@ const CustomerFooter = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="text-[#083B44] hover:text-[#4F46E5] transition-colors"
+                  className="text-[#083B44] hover:text-[#E27BA3]  transition-colors"
                 >
                   <Icon size={20} />
                 </a>
@@ -207,7 +207,7 @@ const CustomerFooter = () => {
           <div
             className="
               relative overflow-hidden
-              bg-[#4F46E5]
+              bg-[#D98BA8]
               rounded-tl-3xl rounded-bl-3xl rounded-br-3xl rounded-tr-none
               p-8 sm:p-10
               flex flex-col justify-between gap-8

@@ -3,7 +3,7 @@
 // Uses YogaT20 colors, images and content
 
 const programs = [
-   {
+  {
     id: "yogat20",
     title: "Yoga T20",
     subtitle: "Master the Art of Consistency. 20 Minutes to a Balanced Life",
@@ -61,15 +61,15 @@ export default function ProgramsSection() {
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-14">
         {/* Heading */}
         <div className="text-center mb-10 lg:mb-14">
-  <h2 className="text-3xl sm:text-3xl lg:text-[40px] font-bold text-[#111827] mb-3">
-    Have a Look into our{" "}
-    <span className="text-[#E27BA3]">Other Programs</span>
-  </h2>
+          <h2 className="text-3xl sm:text-3xl lg:text-[40px] font-bold text-[#111827] mb-3">
+            Have a Look into our{" "}
+            <span className="text-[#E27BA3]">Other Programs</span>
+          </h2>
 
-  <p className="text-[#083B44] text-sm sm:text-base lg:text-lg">
-    Find the right path for your health goals
-  </p>
-</div>
+          <p className="text-[#083B44] text-sm sm:text-base lg:text-lg">
+            Find the right path for your health goals
+          </p>
+        </div>
 
         {/* Cards */}
         <div className="space-y-6 lg:space-y-8">

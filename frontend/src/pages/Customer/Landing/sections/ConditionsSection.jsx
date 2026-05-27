@@ -20,7 +20,7 @@ export default function ConditionsSection() {
   };
 
   return (
-    <section className="py-10 sm:py-14 lg:py-20 bg-white">
+    <section className="py-2 sm:py-10 lg:py-10 bg-white">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* HEADING */}
         <div className="text-center mb-6 sm:mb-8 lg:mb-10">

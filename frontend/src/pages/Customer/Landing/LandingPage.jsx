@@ -11,13 +11,13 @@ import PricingSection from "./sections/PricingSection";
 // import HealingCTASection from "./sections/HealingCTASection";
 import ReviewsSection from "./sections/ReviewsSection";
 import ProgramsSection from "./sections/ProgramsSection";
-import FAQSection from "./sections/FAQSection";
+// import FAQSection from "./sections/FAQSection";
 import CallbackSection from "./sections/CallbackSection";
 import ReferAndEarnSection from "./sections/ReferAndEarnSection";
 import WelcomePopup from "./components/WelcomePopup";
 import TrackDailyWinsSection from "./sections/TrackDailyWinsSection";
 import ExpertSupportSection from "./sections/ExpertSupportSection";
-
+import WhatWomenGoThroughSection from "./sections/WhatWomenGoThroughSection";
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white flex flex-col">
@@ -26,8 +26,9 @@ export default function LandingPage() {
 
       <main className="flex-1 w-full">
         <HeroSection />
+        <WhatWomenGoThroughSection />
         <ConditionsSection />
-        <ExpertSupportSection></ExpertSupportSection>
+        <ExpertSupportSection/>
         <OurStructureSection />
         {/* <HealingCTASection /> */}
         <TrackDailyWinsSection />
@@ -35,7 +36,7 @@ export default function LandingPage() {
         <PricingSection />
         <ReviewsSection />
         <ProgramsSection />
-        <FAQSection />
+        {/* <FAQSection /> */}
         <CallbackSection />
         <ReferAndEarnSection />
       </main>

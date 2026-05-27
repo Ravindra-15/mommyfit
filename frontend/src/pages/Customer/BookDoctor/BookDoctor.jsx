@@ -282,7 +282,6 @@ const BookDoctor = () => {
           <h2 className="text-2xl font-bold text-teal-800 mb-4">
             Welcome to MommyFit
           </h2>
-
           {/* 👤 Avatar — clickable to upload */}
           <div className="flex flex-col items-center mb-5">
             <div

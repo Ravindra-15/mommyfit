@@ -8,7 +8,7 @@ import ConditionsSection from "./sections/ConditionsSection";
 import OurStructureSection from "./sections/OurStructureSection";
 import WhatYouGetSection from "./sections/WhatYouGetSection";
 import PricingSection from "./sections/PricingSection";
-import HealingCTASection from "./sections/HealingCTASection";
+// import HealingCTASection from "./sections/HealingCTASection";
 import ReviewsSection from "./sections/ReviewsSection";
 import ProgramsSection from "./sections/ProgramsSection";
 import FAQSection from "./sections/FAQSection";
@@ -29,9 +29,9 @@ export default function LandingPage() {
         <ConditionsSection />
         <ExpertSupportSection></ExpertSupportSection>
         <OurStructureSection />
-        <HealingCTASection />
+        {/* <HealingCTASection /> */}
         <TrackDailyWinsSection />
-        <WhatYouGetSection />
+        {/* <WhatYouGetSection /> */}
         <PricingSection />
         <ReviewsSection />
         <ProgramsSection />

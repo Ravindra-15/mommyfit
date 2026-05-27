@@ -1,4 +1,4 @@
-// Diabmukt - Pricing Section
+// MommyFit - Pricing Section
 
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -6,9 +6,9 @@ import { CheckCircle2, Phone } from "lucide-react";
 import { getSubscriptionRedirect } from "../../../../utils/subscriptionGuard";
 import { getPublicProgramPlans } from "../../../../services/programPlanPublicService";
 
-const PROGRAM_ID = "diabmukt";
+const PROGRAM_ID = "mommyfit";
 
-// 🏷️ Hardcoded per-program feature bullets (Diabmukt)
+// 🏷️ Hardcoded per-program feature bullets (MommyFit)
 const features = [
   "Community Sessions",
   "health activity tracking",
@@ -105,13 +105,13 @@ export default function PricingSection() {
   };
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-10 bg-white">
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* HEADING */}
         <div className="text-center mb-10 sm:mb-12 lg:mb-14">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0F172A]">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#2D3D4A]">
             Simple,{" "}
-            <span className="text-[#4F46E5]">transparent pricing</span>
+            <span className="text-[#E27BA3]">transparent pricing</span>
           </h2>
         </div>
 
@@ -123,7 +123,7 @@ export default function PricingSection() {
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-5 sm:gap-6 items-stretch">
             {/* LEFT — Price + Features Card */}
-            <div className="bg-white rounded-3xl border border-[#D9DDF0] px-6 sm:px-8 lg:px-10 py-7 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-8">
+            <div className="bg-white rounded-3xl border border-[#F0D9E2] px-6 sm:px-8 lg:px-10 py-7 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-8">
               {/* Price block */}
               <div className="flex flex-col items-start">
                 <div className="flex items-start">
@@ -140,7 +140,7 @@ export default function PricingSection() {
 
                 <button
                   onClick={handleGetStarted}
-                  className="mt-5 bg-[#4F46E5] hover:bg-[#4338CA] text-white text-[13px] sm:text-sm font-semibold px-6 sm:px-7 py-2.5 rounded-full shadow-[0_6px_18px_rgba(79,70,229,0.28)] transition-all"
+                  className="mt-5 bg-[#E27BA3] hover:bg-[#D86A95] text-white text-[13px] sm:text-sm font-semibold px-6 sm:px-7 py-2.5 rounded-full shadow-[0_6px_18px_rgba(226,123,163,0.3)] transition-all"
                 >
                   Get Started
                 </button>
@@ -155,7 +155,7 @@ export default function PricingSection() {
                   >
                     <CheckCircle2
                       size={18}
-                      className="text-[#4F46E5] flex-shrink-0"
+                      className="text-[#E27BA3] flex-shrink-0"
                       strokeWidth={2.2}
                     />
                     {f}
@@ -165,7 +165,7 @@ export default function PricingSection() {
             </div>
 
             {/* RIGHT — Contact Us Card */}
-            <div className="bg-gradient-to-br from-[#4F46E5] to-[#6366F1] rounded-3xl px-6 sm:px-7 py-7 sm:py-8 flex flex-col items-center text-center text-white shadow-[0_8px_24px_rgba(79,70,229,0.22)]">
+            <div className="bg-gradient-to-br from-[#E27BA3] to-[#D98BA8] rounded-3xl px-6 sm:px-7 py-7 sm:py-8 flex flex-col items-center text-center text-white shadow-[0_8px_24px_rgba(226,123,163,0.25)]">
               <div className="w-11 h-11 rounded-full bg-white/15 flex items-center justify-center mb-3">
                 <Phone size={20} className="text-white" strokeWidth={2.2} />
               </div>
@@ -181,7 +181,7 @@ export default function PricingSection() {
 
               <button
                 onClick={handleConnect}
-                className="bg-white hover:bg-[#F6F8FC] text-[#4F46E5] text-sm font-semibold px-7 py-2.5 rounded-full transition-colors shadow-sm"
+                className="bg-white hover:bg-[#FBEAF1] text-[#E27BA3] text-sm font-semibold px-7 py-2.5 rounded-full transition-colors shadow-sm"
               >
                 Connect
               </button>

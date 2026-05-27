@@ -119,8 +119,8 @@ function App() {
         />
         <Route path="/home" element={<LandingPage />} />
 
-        <Route path="/book-doctor" element={<BookDoctor />} />
-        <Route path="/book-doctor/:id" element={<DoctorDetail />} />
+        {/* <Route path="/book-doctor" element={<BookDoctor />} />
+        <Route path="/book-doctor/:id" element={<DoctorDetail />} /> */}
         <Route
           path="/checkout"
           element={
@@ -139,7 +139,7 @@ function App() {
           }
         />
 
-        <Route
+        {/* <Route
           path="/my-appointments"
           element={
             <ProtectedRoute>
@@ -154,7 +154,7 @@ function App() {
               <MyProfile />
             </ProtectedRoute>
           }
-        />
+        /> */}
 
         <Route
           path="/notifications"
@@ -191,7 +191,7 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route path="/programs/:id/tenure" element={<SelectTenure />} />
+        {/* <Route path="/programs/:id/tenure" element={<SelectTenure />} />
         <Route path="/programs/:id/checkout" element={<ProgramCheckout />} />
         <Route path="/programs/:id/success" element={<ProgramSuccess />} />
         <Route
@@ -219,7 +219,7 @@ function App() {
               <ProgressReport />
             </ProtectedProgramRoute>
           }
-        />
+        /> */}
 
         {/* ============================================ */}
         {/* 🔐 ADMIN ROUTES */}

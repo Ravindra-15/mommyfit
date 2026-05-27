@@ -24,11 +24,11 @@ const CustomTooltip = ({ active, payload, label }) => {
 
   return (
     <div
-      className="bg-white border border-[#D9DDF0] rounded-lg shadow-lg px-3 py-2 text-xs"
+      className="bg-white border border-[#F0D9E2] rounded-lg shadow-lg px-3 py-2 text-xs"
       role="tooltip"
     >
       <p className="font-semibold text-[#1F2937] mb-0.5">{label}</p>
-      <p className="text-indigo-600 font-medium">
+      <p className=" text-[#E27BA3] font-medium">
         {payload[0].value.toLocaleString()} users
       </p>
     </div>

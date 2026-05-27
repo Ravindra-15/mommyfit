@@ -143,14 +143,14 @@ function LoopingRow({ items }) {
       <div className="flex justify-center gap-3 mt-6">
         <button
           onClick={() => scrollBy(-1)}
-          className="w-10 h-10 rounded-full border border-gray-300 hover:border-[#4F46E5] hover:text-[#E27BA3] text-[#6B7280] flex items-center justify-center transition-colors"
+          className="w-10 h-10 rounded-full border border-gray-300 hover:border-[#E27BA3 ] hover:text-[#E27BA3] text-[#6B7280] flex items-center justify-center transition-colors"
           aria-label="Previous"
         >
           <ChevronLeft size={18} />
         </button>
         <button
           onClick={() => scrollBy(1)}
-          className="w-10 h-10 rounded-full border border-gray-300 hover:border-[#4F46E5] hover:text-[#E27BA3] text-[#6B7280] flex items-center justify-center transition-colors"
+          className="w-10 h-10 rounded-full border border-gray-300 hover:border-[#E27BA3 ] hover:text-[#E27BA3] text-[#6B7280] flex items-center justify-center transition-colors"
           aria-label="Next"
         >
           <ChevronRight size={18} />

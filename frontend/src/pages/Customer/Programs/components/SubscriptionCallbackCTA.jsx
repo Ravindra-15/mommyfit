@@ -1,5 +1,5 @@
 /**
- * Diabmukt — Subscription Callback CTA
+ * Mommyfit — Subscription Callback CTA
  * One-click callback request for logged-in users.
  * Locks permanently once requested (verified against backend on mount).
  */
@@ -94,7 +94,7 @@ export default function SubscriptionCallbackCTA({ programId }) {
               Unsure which tenure is right for your health goals?
             </h3>
             <p className="text-[#475569] text-sm leading-relaxed mb-5">
-              Everyone's diabetes journey is unique. Speak with a Diabmukt
+              Everyone's diabetes journey is unique. Speak with a Mommyfit
               specialist to determine if you need a 12, 24, or 48-week protocol
               based on your body profile.
             </p>
@@ -104,7 +104,7 @@ export default function SubscriptionCallbackCTA({ programId }) {
               className={`text-sm font-semibold px-6 py-2.5 rounded-full transition-colors border ${
                 requested
                   ? "border-green-400 text-green-600 bg-green-50 cursor-default"
-                  : "border-[#4F46E5] text-[#4F46E5] hover:bg-[#4F46E5] hover:text-white disabled:opacity-60"
+                  : "border-[#E27BA3] text-[#E27BA3] hover:bg-[#E27BA3] hover:text-white disabled:opacity-60"
               }`}
             >
               {requested
@@ -152,7 +152,7 @@ export default function SubscriptionCallbackCTA({ programId }) {
 
             <button
               onClick={() => setShowThanks(false)}
-              className="w-full bg-[#4F46E5] hover:bg-[#4338CA] text-white text-sm font-semibold py-3 rounded-full transition-colors"
+              className="w-full bg-[#E27BA3] hover:bg-[#D86A95] text-white text-sm font-semibold py-3 rounded-full transition-colors"
             >
               Go Back
             </button>

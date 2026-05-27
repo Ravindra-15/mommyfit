@@ -27,7 +27,7 @@ const Home = () => {
       {/* Modal */}
       <Modal isOpen={open} onClose={() => setOpen(false)}>
         <div className="text-center">
-          <h2 className="text-xl font-semibold text-teal-800 mb-4">
+          <h2 className="text-xl font-semibold  text-[#2D3D4A]mb-4">
             Welcome to Zealtho
           </h2>
 

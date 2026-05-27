@@ -39,7 +39,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between px-4 md:px-8 lg:px-12 py-4">
         {/* LEFT — Logo */}
         <Link to="/">
-          <h1 className="text-lg md:text-xl font-semibold text-teal-800 tracking-tight">
+          <h1 className="text-lg md:text-xl font-semibold  text-[#2D3D4A]tracking-tight">
             Zealtho
           </h1>
         </Link>
@@ -51,19 +51,19 @@ const Navbar = () => {
               <a
                 key={item.label}
                 href={item.to}
-                className="group relative whitespace-nowrap text-[#374151] hover:text-teal-800 transition-all duration-300"
+                className="group relative whitespace-nowrap text-[#374151] hover: text-[#2D3D4A]transition-all duration-300"
               >
                 {item.label}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#4F46E5] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#E27BA3] transition-all duration-300 group-hover:w-full" />
               </a>
             ) : (
               <Link
                 key={item.label}
                 to={item.to}
-                className="group relative whitespace-nowrap text-[#374151] hover:text-teal-800 transition-all duration-300"
+                className="group relative whitespace-nowrap text-[#374151] hover: text-[#2D3D4A]transition-all duration-300"
               >
                 {item.label}
-                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#4F46E5] transition-all duration-300 group-hover:w-full" />
+                <span className="absolute left-0 -bottom-1 w-0 h-[2px] bg-[#E27BA3] transition-all duration-300 group-hover:w-full" />
               </Link>
             ),
           )}
@@ -72,7 +72,7 @@ const Navbar = () => {
         {/* RIGHT */}
         <div className="flex items-center gap-3">
           <Link to="/login">
-  <button className="bg-[#4F46E5] text-white px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap">
+  <button className="bg-[#E27BA3] text-white px-4 md:px-5 py-2 rounded-full text-xs md:text-sm font-medium whitespace-nowrap">
     Join now
   </button>
 </Link>
@@ -97,7 +97,7 @@ const Navbar = () => {
       {/* Mobile menu */}
       {/* Mobile menu */}
 {mobileMenuOpen && (
-  <div className="md:hidden bg-white border-t border-[#E7EAF3] px-4 py-4 flex flex-col gap-2 text-[14px] font-medium text-[#374151] animate-in slide-in-from-top duration-300">
+  <div className="md:hidden bg-white border-t border-[#EFE2E8]px-4 py-4 flex flex-col gap-2 text-[14px] font-medium text-[#374151] animate-in slide-in-from-top duration-300">
     
     {navLinks.map((item) =>
       item.to.includes("#") ? (
@@ -114,7 +114,7 @@ const Navbar = () => {
         >
           {item.label}
 
-          <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-[#4F46E5] rounded-full transition-all duration-300 group-hover:w-full" />
+          <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-[#E27BA3] rounded-full transition-all duration-300 group-hover:w-full" />
         </a>
       ) : (
         <Link
@@ -130,7 +130,7 @@ const Navbar = () => {
         >
           {item.label}
 
-          <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-[#4F46E5] rounded-full transition-all duration-300 group-hover:w-full" />
+          <span className="absolute left-0 -bottom-0.5 w-0 h-[2px] bg-[#E27BA3] rounded-full transition-all duration-300 group-hover:w-full" />
         </Link>
       ),
     )}
@@ -147,7 +147,7 @@ const Navbar = () => {
       </button>
     ) : (
       <Link to="/login" onClick={() => setMobileMenuOpen(false)}>
-      <button className="bg-[#4F46E5] text-white px-5 py-2 rounded-full text-sm font-medium inline-flex items-center justify-center">
+      <button className="bg-[#E27BA3] text-white px-5 py-2 rounded-full text-sm font-medium inline-flex items-center justify-center">
           Join now
         </button>
       </Link>

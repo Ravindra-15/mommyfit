@@ -122,7 +122,7 @@ const AdminLogin = () => {
   if (isAuthLoading) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-[#f5f6fa]">
-        <Loader2 className="w-8 h-8 text-indigo-600 animate-spin" />
+        <Loader2 className="w-8 h-8  text-[#E27BA3] animate-spin" />
       </div>
     );
   }
@@ -132,7 +132,7 @@ const AdminLogin = () => {
       {/* ============================================ */}
       {/* 🎨 LEFT PANEL — Brand showcase (desktop only) */}
       {/* ============================================ */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-800 relative overflow-hidden">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-[#E27BA3]via-indigo-700 to-purple-800 relative overflow-hidden">
         {/* Decorative orbs */}
         <div className="absolute top-20 left-20 w-72 h-72 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl" />
@@ -177,10 +177,10 @@ const AdminLogin = () => {
       {/* 📝 RIGHT PANEL — Login form */}
       {/* ============================================ */}
       <div className="flex-1 flex items-center justify-center px-4 sm:px-6 py-10 lg:py-12 bg-gradient-to-b from-[#f5f6fa] to-[#eef1f7]">
-        <div className="w-full max-w-md bg-white/80 backdrop-blur-xl border border-[#D9DDF0] rounded-2xl shadow-lg p-6 sm:p-8">
+        <div className="w-full max-w-md bg-white/80 backdrop-blur-xl border border-[#F0D9E2] rounded-2xl shadow-lg p-6 sm:p-8">
           {/* Mobile-only: Brand logo (hidden on desktop where left panel shows it) */}
           <div className="lg:hidden flex flex-col items-center justify-center gap-3 mb-10">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-md">
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#E27BA3]to-purple-600 flex items-center justify-center shadow-md">
               <Shield size={24} className="text-white" />
             </div>
             <div className="text-center">
@@ -227,11 +227,11 @@ const AdminLogin = () => {
                   disabled={submitting}
                   className="
                     w-full pl-10 pr-4 py-3
-                    border border-[#D9DDF0] rounded-xl
+                    border border-[#F0D9E2] rounded-xl
                     text-sm text-[#1F2937] placeholder-gray-400
                     bg-white
-                    focus:outline-none focus:border-indigo-200 focus:ring-2 focus:ring-indigo-200
-                    disabled:bg-[#F6F8FC] disabled:cursor-not-allowed
+                    focus:outline-none focus:border-[#F0D9E2] focus:ring-2 focus:ring-indigo-200
+                    disabled:bg-[#FBEAF1]disabled:cursor-not-allowed
                     transition-colors
                   "
                 />
@@ -262,11 +262,11 @@ const AdminLogin = () => {
                   disabled={submitting}
                   className="
                     w-full pl-10 pr-11 py-3
-                    border border-[#D9DDF0] rounded-xl
+                    border border-[#F0D9E2] rounded-xl
                     text-sm text-[#1F2937] placeholder-gray-400
                     bg-white
-                    focus:outline-none focus:border-indigo-200 focus:ring-2 focus:ring-indigo-200
-                    disabled:bg-[#F6F8FC] disabled:cursor-not-allowed
+                    focus:outline-none focus:border-[#F0D9E2] focus:ring-2 focus:ring-indigo-200
+                    disabled:bg-[#FBEAF1]disabled:cursor-not-allowed
                     transition-colors
                   "
                 />
@@ -303,7 +303,7 @@ const AdminLogin = () => {
               disabled={submitting}
               className="
                 w-full flex items-center justify-center gap-2
-               bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700
+               bg-gradient-to-r from-[#E27BA3]to-purple-600 hover:from-indigo-700 hover:to-purple-700
                 disabled:bg-indigo-400 disabled:cursor-not-allowed
                 text-white text-sm font-semibold
                 py-3.5 rounded-xl

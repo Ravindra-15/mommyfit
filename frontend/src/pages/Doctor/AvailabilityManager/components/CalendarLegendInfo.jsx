@@ -12,16 +12,16 @@ const CalendarLegendInfo = () => {
   if (!visible) return null;
 
   return (
-    <div className="mb-4 bg-indigo-50/60 border border-indigo-100 rounded-xl px-4 py-3 flex items-start gap-3">
+    <div className="mb-4 bg-[#FBEAF1]/60 border border-[#F0D9E2]rounded-xl px-4 py-3 flex items-start gap-3">
       <div className="w-7 h-7 rounded-lg bg-indigo-100 flex items-center justify-center flex-shrink-0">
-        <Info size={14} className="text-indigo-600" />
+        <Info size={14} className=" text-[#E27BA3]" />
       </div>
       <div className="flex-1 min-w-0">
         <p className="text-xs text-[#374151]">
           <span className="font-semibold">Click</span> empty slots to mark them available.{" "}
           <span className="font-semibold">Right-click</span> any slot for more options
           (block, cancel appointment, block whole day). Don't forget to{" "}
-          <span className="font-semibold text-indigo-600">Save Changes</span>.
+          <span className="font-semibold  text-[#E27BA3]">Save Changes</span>.
         </p>
       </div>
       <button

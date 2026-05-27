@@ -36,7 +36,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
         transition-all duration-200
         ${
           isOpen
-            ? "border border-[#D9DDF0] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
+            ? "border border-[#F0D9E2] bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)]"
             : "border border-transparent bg-transparent"
         }
       `}
@@ -66,7 +66,7 @@ const FAQItem = ({ question, answer, isOpen, onToggle }) => {
             ${
               isOpen
                 ? "bg-gray-100 text-[#083B44]"
-                : "bg-[#F6F8FC] text-[#083B44]"
+                : "bg-[#FBEAF1]text-[#083B44]"
             }
           `}
         >

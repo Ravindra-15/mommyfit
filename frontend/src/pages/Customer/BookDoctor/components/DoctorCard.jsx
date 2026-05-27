@@ -71,11 +71,11 @@ const DoctorCard = ({ doctor }) => {
   return (
     <article
       className="
-       bg-white rounded-[28px] border border-[#E7EAF3]
+       bg-white rounded-[28px] border border-[#EFE2E8]
         shadow-[0_6px_24px_rgba(15,23,42,0.04)]
         p-5 sm:p-6
         flex flex-col lg:flex-row gap-5
-        hover:border-[#D9DDF0]
+        hover:border-[#F0D9E2]
         hover:shadow-[0_10px_28px_rgba(15,23,42,0.08)]
         transition-all duration-200
               "
@@ -84,7 +84,7 @@ const DoctorCard = ({ doctor }) => {
       {/* 👤 LEFT — Avatar + Name + Specialty           */}
       {/* ============================================ */}
       <div className="flex flex-col items-center text-center lg:w-44 flex-shrink-0">
-        <div className="relative w-20 h-20 rounded-full overflow-hidden border border-[#D9DDF0] bg-gradient-to-br from-[#EEF2FF] to-[#F5F3FF]">
+        <div className="relative w-20 h-20 rounded-full overflow-hidden border border-[#F0D9E2] bg-gradient-to-br from-[#FBEAF1] to-[#F7E8EE]">
           {photoUrl ? (
             <img
               src={photoUrl}
@@ -95,7 +95,7 @@ const DoctorCard = ({ doctor }) => {
               }}
             />
           ) : (
-            <div className="w-full h-full flex items-center justify-center text-[#5B4FF7]">
+            <div className="w-full h-full flex items-center justify-center text-[#E27BA3]">
               <User size={28} />
             </div>
           )}
@@ -107,7 +107,7 @@ const DoctorCard = ({ doctor }) => {
           </h3>
           <CheckCircle2
             size={14}
-            className="text-[#5B4FF7]"
+            className="text-[#E27BA3]"
             aria-label="Verified"
           />
         </div>
@@ -135,8 +135,8 @@ const DoctorCard = ({ doctor }) => {
                   inline-flex items-center
                   px-3 py-1 rounded-full
                   text-[11px] font-semibold
-                  bg-[#F5F7FF] text-[#4B5563]
-                  border border-[#E7EAF3]
+                   bg-[#FBF3F7]  text-[#4B5563]
+                  border border-[#EFE2E8]
                                   "
               >
                 {tag}
@@ -169,7 +169,7 @@ const DoctorCard = ({ doctor }) => {
             ${
               availability.soon
                 ? "bg-[#ECFDF3] text-[#027A48] border-[#ABEFC6]"
-                : "bg-[#F5F7FF] text-[#5B4FF7] border-[#D9DDF0]"
+                : " bg-[#FBF3F7]  text-[#E27BA3] border-[#F0D9E2]"
             }
           `}
         >
@@ -183,10 +183,10 @@ const DoctorCard = ({ doctor }) => {
           inline-flex items-center justify-center
           px-5 py-2.5 rounded-full
           text-sm font-semibold text-white
-          bg-[#5B4FF7]
-          hover:bg-[#4338CA]
+          bg-[#E27BA3]
+          hover:bg-[#D86A95]
           transition-all duration-200
-          shadow-[0_8px_20px_rgba(91,79,247,0.22)]
+          shadow-[0_8px_20px_rgba(226,123,163,0.22)]
           w-full sm:w-auto
         "
         >
@@ -200,8 +200,8 @@ const DoctorCard = ({ doctor }) => {
           inline-flex items-center justify-center
           px-5 py-2.5 rounded-full
           text-sm font-medium text-[#374151]
-          bg-white border border-[#E7EAF3]
-          hover:bg-[#F7F8FF]
+          bg-white border border-[#EFE2E8]
+          hover:bg-[#FBF3F7]
           transition-all duration-200
           w-full sm:w-auto
         "

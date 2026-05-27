@@ -104,11 +104,11 @@ const DoctorLogin = () => {
   };
 
   return (
-    <div className="min-h-screen flex bg-[#F6F8FC]">
+    <div className="min-h-screen flex bg-[#FBEAF1 ]">
       {/* ============================================ */}
       {/* 🎨 LEFT PANEL — gradient + branding */}
       {/* ============================================ */}
-      <div className="hidden md:flex md:w-1/2 lg:w-[55%] relative overflow-hidden bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-700">
+      <div className="hidden md:flex md:w-1/2 lg:w-[55%] relative overflow-hidden bg-gradient-to-br from-[#E27BA3]via-indigo-700 to-purple-700">
         {/* Decorative blobs */}
         <div className="absolute -top-24 -left-24 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
         <div className="absolute -bottom-32 -right-20 w-[28rem] h-[28rem] bg-purple-400/20 rounded-full blur-3xl" />
@@ -155,20 +155,20 @@ const DoctorLogin = () => {
         <div className="w-full max-w-md">
           {/* Mobile-only brand block */}
           <div className="md:hidden flex items-center gap-3 mb-8">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center shadow-md">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#E27BA3]to-purple-600 flex items-center justify-center shadow-md">
               <ShieldCheck className="w-5 h-5 text-white" strokeWidth={2.2} />
             </div>
             <div>
               <p className="text-base font-bold text-[#1F2937] leading-tight">
                 Zealtho
               </p>
-              <p className="text-[10px] tracking-[0.18em] text-indigo-600 font-semibold">
+              <p className="text-[10px] tracking-[0.18em]  text-[#E27BA3] font-semibold">
                 DOCTOR PORTAL
               </p>
             </div>
           </div>
 
-          <div className="bg-white rounded-2xl border border-[#E7EAF3] shadow-[0_4px_24px_rgba(16,24,40,0.06)] p-8 sm:p-10">
+          <div className="bg-white rounded-2xl border border-[#EFE2E8]shadow-[0_4px_24px_rgba(16,24,40,0.06)] p-8 sm:p-10">
             <h2 className="text-3xl font-bold text-[#1F2937] tracking-tight">
               Log In
 
@@ -201,7 +201,7 @@ const DoctorLogin = () => {
                     className={`w-full pl-11 pr-4 py-3 text-sm rounded-xl border transition-colors bg-white text-[#1F2937] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 disabled:opacity-60 ${
                       errors.username
                         ? "border-red-300 focus:border-red-400"
-                        : "border-[#D9DDF0] focus:border-indigo-500"
+                        : "border-[#F0D9E2] focus:border-[#E27BA3]"
                     }`}
                   />
                 </div>
@@ -234,7 +234,7 @@ const DoctorLogin = () => {
                     className={`w-full pl-11 pr-11 py-3 text-sm rounded-xl border transition-colors bg-white text-[#1F2937] placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 disabled:opacity-60 ${
                       errors.password
                         ? "border-red-300 focus:border-red-400"
-                        : "border-[#D9DDF0] focus:border-indigo-500"
+                        : "border-[#F0D9E2] focus:border-[#E27BA3]"
                     }`}
                   />
                   <button
@@ -267,7 +267,7 @@ const DoctorLogin = () => {
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
                   disabled={isSubmitting}
-                  className="w-4 h-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500/30 cursor-pointer"
+                  className="w-4 h-4 rounded border-gray-300  text-[#E27BA3] focus:ring-indigo-500/30 cursor-pointer"
                 />
                 Remember me
               </label>
@@ -276,7 +276,7 @@ const DoctorLogin = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 active:scale-[0.99] transition-all shadow-[0_4px_14px_rgba(79,70,229,0.35)] disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100 flex items-center justify-center gap-2"
+                className="w-full py-3 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#E27BA3]to-purple-600 hover:from-indigo-700 hover:to-purple-700 active:scale-[0.99] transition-all shadow-[0_4px_14px_rgba(79,70,229,0.35)] disabled:opacity-60 disabled:cursor-not-allowed disabled:active:scale-100 flex items-center justify-center gap-2"
               >
                 {isSubmitting ? (
                   <>

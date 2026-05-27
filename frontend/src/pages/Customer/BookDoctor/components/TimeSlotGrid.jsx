@@ -45,7 +45,7 @@ const TimeSlotGrid = ({
   if (!hasAnyBookable) {
     return (
       <div className="text-center py-10">
-        <div className="w-10 h-10 rounded-full bg-[#F6F8FC] flex items-center justify-center mx-auto mb-3">
+        <div className="w-10 h-10 rounded-full bg-[#FBEAF1]flex items-center justify-center mx-auto mb-3">
           <CalendarOff size={18} className="text-gray-400" />
         </div>
         <p className="text-sm font-medium text-[#374151] mb-1">
@@ -76,10 +76,10 @@ const TimeSlotGrid = ({
               transition-colors border
               ${
                 isSelected
-                  ? "bg-[#5B4FF7] text-white border-[#5B4FF7] shadow-[0_8px_18px_rgba(91,79,247,0.22)]"
+                  ? "bg-[#E27BA3] text-white border-[#E27BA3] shadow-[0_8px_18px_rgba(226,123,163,0.22)]"
                   : disabled
-                    ? "bg-[#F6F8FC] text-gray-300 border-[#E7EAF3] cursor-not-allowed"
-                    : "bg-white text-[#374151] border-[#E7EAF3] hover:border-[#5B4FF7]/40 hover:bg-[#F7F8FF]"
+                    ? "bg-[#FBEAF1]text-gray-300 border-[#EFE2E8]cursor-not-allowed"
+                    : "bg-white text-[#374151] border-[#EFE2E8] hover:border-[#E27BA3]/40 hover:bg-[#FBF3F7]"
               }
             `}
               aria-pressed={isSelected}

@@ -108,7 +108,7 @@ const ChipsInput = ({
           ${
             error
               ? "border-red-300 focus-within:border-red-500"
-              : "border-[#D9DDF0] focus-within:border-indigo-500 focus-within:ring-1 focus-within:ring-indigo-500"
+              : "border-[#F0D9E2] focus-within:border-[#E27BA3] focus-within:ring-1 focus-within:ring-indigo-500"
           }
         `}
         onClick={() => inputRef.current?.focus()}
@@ -119,7 +119,7 @@ const ChipsInput = ({
             key={value}
             className="
               inline-flex items-center gap-1.5 px-2.5 py-1
-              bg-indigo-50 text-indigo-700 text-sm font-medium
+              bg-[#FBEAF1] text-indigo-700 text-sm font-medium
               rounded-md
             "
           >
@@ -133,7 +133,7 @@ const ChipsInput = ({
               className="
                 w-4 h-4 rounded-full
                 flex items-center justify-center
-                text-indigo-500 hover:text-indigo-700 hover:bg-indigo-100
+                text-[#E27BA3]hover:text-indigo-700 hover:bg-indigo-100
                 transition-colors
               "
               aria-label={`Remove ${value}`}
@@ -179,7 +179,7 @@ const ChipsInput = ({
             className="
               absolute left-0 right-0 z-10
               max-h-60 overflow-y-auto
-              bg-white border border-[#D9DDF0] rounded-lg
+              bg-white border border-[#F0D9E2] rounded-lg
               shadow-lg
               py-1
             "
@@ -193,7 +193,7 @@ const ChipsInput = ({
                 className="
                   px-3 py-2 text-sm text-[#374151]
                   cursor-pointer
-                  hover:bg-indigo-50 hover:text-indigo-700
+                  hover:bg-[#FBEAF1] hover:text-indigo-700
                   flex items-center justify-between
                   transition-colors
                 "
@@ -216,10 +216,10 @@ const ChipsInput = ({
                   className="
                     px-3 py-2 text-sm
                     cursor-pointer
-                    hover:bg-indigo-50
-                    border-t border-[#E7EAF3]
+                    hover:bg-[#FBEAF1]
+                    border-t border-[#EFE2E8]
                     flex items-center gap-2
-                    text-indigo-600 font-medium
+                     text-[#E27BA3] font-medium
                     transition-colors
                   "
                 >

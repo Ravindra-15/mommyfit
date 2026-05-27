@@ -1,7 +1,7 @@
 /**
  * CUSTOMER MODULE — Hero Search Block (Book Doctor page)
  *
- * Orange hero panel: "Find the right expert for your journey" + search bar.
+ * Pink hero panel: "Find the right expert for your journey" + search bar.
  * Below: clickable specialty chips that filter the doctor list.
  */
 
@@ -33,119 +33,117 @@ const HeroSearch = ({
     onSpecialtyChange(specialty === value ? "" : value);
   };
 
- return (
-  <div className="space-y-5">
-    {/* ============================================ */}
-    {/* 🟣 HERO SECTION */}
-    {/* ============================================ */}
-    <div className="relative pb-8 sm:pb-10">
-      {/* Hero panel */}
-      <div
-        className="
-          relative overflow-hidden
-          bg-gradient-to-r from-[#5B4FF7] to-[#4338CA]
-          rounded-[28px]
-          px-5 sm:px-8 py-12 sm:py-16
-          shadow-[0_10px_30px_rgba(91,79,247,0.18)]
-        "
-      >
-        {/* Decorative blur */}
-        <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-white/10 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-10 -left-10 w-52 h-52 rounded-full bg-black/10 blur-3xl pointer-events-none" />
+  return (
+    <div className="space-y-5">
+      {/* ============================================ */}
+      {/* 🌸 HERO SECTION */}
+      {/* ============================================ */}
+      <div className="relative pb-8 sm:pb-10">
+        {/* Hero panel */}
+        <div
+          className="
+            relative overflow-hidden
+            bg-[#D98BA8]
+            rounded-[28px]
+            px-5 sm:px-8 py-12 sm:py-16
+            shadow-[0_10px_30px_rgba(226,123,163,0.18)]
+          "
+        >
+          {/* Decorative blur */}
+          <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-white/10 blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-10 -left-10 w-52 h-52 rounded-full bg-black/10 blur-3xl pointer-events-none" />
 
-        <h1 className="relative text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center tracking-tight">
-          Find the right expert for your journey.
-        </h1>
+          <h1 className="relative text-2xl sm:text-3xl lg:text-4xl font-bold text-white text-center tracking-tight">
+            Find the right expert for your journey.
+          </h1>
 
-        <p className="relative text-white/80 text-center mt-3 text-sm sm:text-base">
-          Connect with trusted doctors and specialists instantly.
-        </p>
-      </div>
+          <p className="relative text-white/80 text-center mt-3 text-sm sm:text-base">
+            Connect with trusted doctors and specialists instantly.
+          </p>
+        </div>
 
-      {/* Search Bar */}
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[95%] max-w-4xl px-2">
-        <div className="relative">
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => onSearchChange(e.target.value)}
-            placeholder="Search by symptom or specialty"
-            className="
-              w-full pl-6 pr-16 py-4 sm:py-5
-              bg-white rounded-full
-              text-sm sm:text-base text-[#1F2937] placeholder-gray-400
-              focus:outline-none focus:ring-2 focus:ring-[#5B4FF7]/30
-              shadow-[0_10px_30px_rgba(0,0,0,0.08)]
-              border border-[#ECEFF5]
-            "
-          />
+        {/* Search Bar */}
+        <div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-[95%] max-w-4xl px-2">
+          <div className="relative">
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => onSearchChange(e.target.value)}
+              placeholder="Search by symptom or specialty"
+              className="
+                w-full pl-6 pr-16 py-4 sm:py-5
+                bg-white rounded-full
+                text-sm sm:text-base text-[#1F2937] placeholder-gray-400
+                focus:outline-none focus:ring-2 focus:ring-[#E27BA3]/30
+                shadow-[0_10px_30px_rgba(0,0,0,0.08)]
+                border border-[#ECEFF5]
+              "
+            />
 
-          <button
-            type="button"
-            aria-label="Search"
-            className="
-              absolute right-2 top-1/2 -translate-y-1/2
-              w-11 h-11 sm:w-12 sm:h-12 rounded-full
-              bg-[#5B4FF7] text-white
-              flex items-center justify-center
-              hover:bg-[#4338CA] transition-all duration-200
-              shadow-md
-            "
-          >
-            <Search size={18} />
-          </button>
+            <button
+              type="button"
+              aria-label="Search"
+              className="
+                absolute right-2 top-1/2 -translate-y-1/2
+                w-11 h-11 sm:w-12 sm:h-12 rounded-full
+                bg-[#E27BA3] text-white
+                flex items-center justify-center
+                hover:bg-[#D86A95] transition-all duration-200
+                shadow-md
+              "
+            >
+              <Search size={18} />
+            </button>
+          </div>
         </div>
       </div>
-    </div>
 
-    {/* ============================================ */}
-    {/* 🏷️ SPECIALTY CHIPS */}
-    {/* ============================================ */}
-    <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-      {SPECIALTIES.map((item) => {
-        const isActive = specialty === item;
+      {/* ============================================ */}
+      {/* 🏷️ SPECIALTY CHIPS */}
+      {/* ============================================ */}
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        {SPECIALTIES.map((item) => {
+          const isActive = specialty === item;
 
-        return (
+          return (
+            <button
+              key={item}
+              type="button"
+              onClick={() => toggleSpecialty(item)}
+              className={`
+                w-full px-4 py-3 rounded-2xl
+                text-xs sm:text-sm font-medium
+                border transition-all duration-200
+                ${
+                  isActive
+                    ? "bg-[#E27BA3] text-white border-[#E27BA3] shadow-[0_6px_18px_rgba(226,123,163,0.22)]"
+                    : "bg-white text-[#374151] border-[#EFE2E8] hover:border-[#E27BA3] hover:bg-[#FBF3F7]"
+                }
+              `}
+            >
+              {item}
+            </button>
+          );
+        })}
+      </div>
+
+      {/* 🔄 Active filter */}
+      {specialty && (
+        <p className="text-sm text-[#6B7280]">
+          Filtering by{" "}
+          <span className="font-semibold text-[#E27BA3]">{specialty}</span>
+          {" — "}
           <button
-            key={item}
             type="button"
-            onClick={() => toggleSpecialty(item)}
-            className={`
-              w-full px-4 py-3 rounded-2xl
-              text-xs sm:text-sm font-medium
-              border transition-all duration-200
-              ${
-                isActive
-                  ? "bg-[#5B4FF7] text-white border-[#5B4FF7] shadow-[0_6px_18px_rgba(91,79,247,0.22)]"
-                  : "bg-white text-[#374151] border-[#E7EAF3] hover:border-[#5B4FF7]/40 hover:bg-[#F7F8FF]"
-              }
-            `}
+            onClick={() => onSpecialtyChange("")}
+            className="text-[#D86A95] hover:underline font-medium"
           >
-            {item}
+            clear
           </button>
-        );
-      })}
+        </p>
+      )}
     </div>
-
-    {/* 🔄 Active filter */}
-    {specialty && (
-      <p className="text-sm text-[#6B7280]">
-        Filtering by{" "}
-        <span className="font-semibold text-[#5B4FF7]">
-          {specialty}
-        </span>
-        {" — "}
-        <button
-          type="button"
-          onClick={() => onSpecialtyChange("")}
-          className="text-[#4338CA] hover:underline font-medium"
-        >
-          clear
-        </button>
-      </p>
-    )}
-  </div>
-);
+  );
 };
 
 export default HeroSearch;

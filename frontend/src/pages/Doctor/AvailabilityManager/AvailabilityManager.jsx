@@ -160,7 +160,7 @@ const AvailabilityManager = () => {
             <button
               type="button"
               onClick={discardChanges}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-[#6B7280] bg-[#F6F8FC] border border-[#D9DDF0] hover:bg-gray-100 transition-colors"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-[#6B7280] bg-[#FBEAF1]border border-[#F0D9E2] hover:bg-gray-100 transition-colors"
             >
               <RotateCcw size={13} />
               Discard
@@ -180,7 +180,7 @@ const AvailabilityManager = () => {
             type="button"
             onClick={saveTemplate}
             disabled={!isDirty || saving}
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-gradient-to-r from-[#E27BA3]to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {saving ? (
               <>
@@ -222,7 +222,7 @@ const AvailabilityManager = () => {
           <button
             type="button"
             onClick={handleEndBreak}
-            className="text-xs font-semibold text-indigo-600 hover:text-indigo-700"
+            className="text-xs font-semibold  text-[#E27BA3] hover:text-indigo-700"
           >
             End Break
           </button>
@@ -232,7 +232,7 @@ const AvailabilityManager = () => {
       {/* ============================================ */}
       {/* 📆 CARD: Header + Legend + Calendar           */}
       {/* ============================================ */}
-      <div className="bg-white rounded-2xl border border-[#E7EAF3] shadow-[0_1px_3px_rgba(16,24,40,0.04)] p-5 sm:p-6">
+      <div className="bg-white rounded-2xl border border-[#EFE2E8]shadow-[0_1px_3px_rgba(16,24,40,0.04)] p-5 sm:p-6">
         <WeekHeader
           weekData={weekData}
           isCurrentWeek={isCurrentWeek}

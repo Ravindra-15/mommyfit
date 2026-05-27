@@ -110,16 +110,16 @@ const CustomerNavbar = () => {
 
   return (
     <div ref={drawerRef}>
-      <header className="sticky  top-0 left-0 w-full z-40 bg-white border-b border-[#E7EAF3]">
+      <header className="sticky  top-0 left-0 w-full z-40 bg-white border-b border-[#EFE2E8]">
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between gap-4">
             {/* 🏷️ BRAND */}
             <Link
               to="/home"
-              className="text-xl font-bold text-[#083B44] tracking-tight flex-shrink-0"
+              className="text-xl font-bold text-[#E27BA3] tracking-tight flex-shrink-0"
               onClick={closeMobile}
             >
-              Diabmukt
+              Mommyfit
             </Link>
 
             {/* 🖥️ DESKTOP LINKS */}
@@ -131,12 +131,12 @@ const CustomerNavbar = () => {
                     href={link.to}
                     className="
                       relative text-sm font-medium tracking-wide
-                      text-[#6B7280] hover:text-[#4F46E5]
+                      text-[#6B7280] hover:text-[#E27BA3]
                       transition-all duration-300
                       hover:-translate-y-[1px]
                       after:absolute after:left-0 after:-bottom-1
                       after:h-[2px] after:w-0
-                      after:bg-[#4F46E5]
+                      after:bg-[#E27BA3]
                       after:rounded-full
                       after:transition-all after:duration-300
                       hover:after:w-full
@@ -153,12 +153,12 @@ const CustomerNavbar = () => {
                       transition-all duration-300 hover:-translate-y-[1px]
                       after:absolute after:left-0 after:-bottom-1
                       after:h-[2px] after:w-0
-                      after:bg-[#4F46E5] after:rounded-full
+                      after:bg-[#E27BA3] after:rounded-full
                       after:transition-all after:duration-300
                       hover:after:w-full ${
                         isActive
-                          ? "text-[#083B44] hover:text-[#4F46E5]"
-                          : "text-[#6B7280] hover:text-[#4F46E5]"
+                          ? "text-[#083B44] hover:text-[#E27BA3]"
+                          : "text-[#6B7280] hover:text-[#E27BA3]"
                       }`
                     }
                   >
@@ -179,7 +179,7 @@ const CustomerNavbar = () => {
                       `hidden sm:inline-flex w-10 h-10 rounded-full items-center justify-center transition-colors ${
                         isActive
                           ? "bg-teal-50 text-[#083B44]"
-                          : "text-[#6B7280] hover:bg-[#F6F8FC]"
+                          : "text-[#6B7280] hover:bg-[#FBEAF1 ]"
                       }`
                     }
                     aria-label="Notifications"
@@ -195,9 +195,9 @@ const CustomerNavbar = () => {
                       hidden sm:inline-flex items-center
                       px-5 py-2 rounded-full
                       text-sm font-semibold text-white
-                      bg-[#4F46E5] hover:bg-[#4338CA]
+                      bg-[#E27BA3] hover:bg-[#D86A95]
                       transition-colors
-                     shadow-[0_6px_18px_rgba(79,70,229,0.28)]
+                     shadow-[0_6px_18px_rgba(226,123,163,0.28)]
                     "
                   >
                     Profile
@@ -211,7 +211,7 @@ const CustomerNavbar = () => {
                     hidden sm:inline-flex items-center
                     px-5 py-2 rounded-full
                     text-sm font-semibold text-white
-                   bg-[#4F46E5] hover:bg-[#4338CA]
+                   bg-[#E27BA3] hover:bg-[#D86A95]
                     transition-colors
                     shadow-[0_6px_18px_rgba(79,70,229,0.28)]
                   "
@@ -224,7 +224,7 @@ const CustomerNavbar = () => {
               <button
                 type="button"
                 onClick={() => setMobileOpen((v) => !v)}
-                className="lg:hidden w-10 h-10 rounded-lg flex items-center justify-center text-[#6B7280] hover:bg-[#F6F8FC]"
+                className="lg:hidden w-10 h-10 rounded-lg flex items-center justify-center text-[#6B7280] hover:bg-[#FBEAF1 ]"
                 aria-label="Toggle menu"
               >
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -235,7 +235,7 @@ const CustomerNavbar = () => {
 
         {/* 📱 MOBILE DRAWER */}
         {mobileOpen && (
-          <div className="lg:hidden border-t border-[#E7EAF3] bg-white">
+          <div className="lg:hidden border-t border-[#EFE2E8]bg-white">
             <div className="px-4 py-3 flex flex-col gap-1">
               {links.map((link) =>
                 link.to.includes("#") ? (
@@ -243,7 +243,7 @@ const CustomerNavbar = () => {
                     key={link.to}
                     href={link.to}
                     onClick={closeMobile}
-                    className="px-3 py-2 rounded-lg text-sm font-medium text-[#374151] hover:bg-[#F6F8FC]"
+                    className="px-3 py-2 rounded-lg text-sm font-medium text-[#374151] hover:bg-[#FBEAF1 ]"
                   >
                     {link.label}
                   </a>
@@ -256,7 +256,7 @@ const CustomerNavbar = () => {
                       `px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                         isActive
                           ? "bg-teal-50 text-teal-700"
-                          : "text-[#374151] hover:bg-[#F6F8FC]"
+                          : "text-[#374151] hover:bg-[#FBEAF1 ]"
                       }`
                     }
                   >
@@ -270,7 +270,7 @@ const CustomerNavbar = () => {
                   <NavLink
                     to="/notifications"
                     onClick={closeMobile}
-                    className="px-3 py-2 rounded-lg text-sm font-medium text-[#374151] hover:bg-[#F6F8FC]"
+                    className="px-3 py-2 rounded-lg text-sm font-medium text-[#374151] hover:bg-[#FBEAF1 ]"
                   >
                     Notifications
                   </NavLink>
@@ -284,7 +284,7 @@ const CustomerNavbar = () => {
                     className="
                       mt-1 px-4 py-2 rounded-full self-start
                       text-xs font-semibold text-white
-                      bg-[#4F46E5] hover:bg- [#4338CA]
+                      bg-[#E27BA3] hover:bg- [#D86A95]
                       transition-colors
                     "
                   >
@@ -301,7 +301,7 @@ const CustomerNavbar = () => {
                   className="
                     mt-1 px-4 py-2 rounded-full self-start
                     text-xs font-semibold text-white
-                    bg-[#4F46E5] hover:bg- [#4338CA]
+                    bg-[#E27BA3] hover:bg- [#D86A95]
                     transition-colors
                   "
                 >

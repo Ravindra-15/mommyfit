@@ -15,7 +15,7 @@ export default {
       colors: {
         primary: {
           DEFAULT: "#6366f1", // indigo-500 vibe
-          dark: "#4f46e5",
+          dark: "#E27BA3 ",
         },
       },
 

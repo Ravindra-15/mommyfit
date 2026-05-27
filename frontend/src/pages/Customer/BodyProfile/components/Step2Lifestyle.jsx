@@ -39,7 +39,7 @@ const StepSlider = ({ label, value, options, onChange }) => {
     <div className="bg-white border border-gray-200 rounded-xl p-4">
       <div className="flex items-center justify-between mb-3">
         <label className="text-xs font-semibold text-gray-700">{label}</label>
-        <span className="text-xs font-bold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-md">
+        <span className="text-xs font-bold  text-[#E27BA3] bg-[#FBEAF1] px-2 py-0.5 rounded-md">
           {options[current]}
         </span>
       </div>
@@ -47,7 +47,7 @@ const StepSlider = ({ label, value, options, onChange }) => {
       <div className="relative h-9 flex items-center">
         <div className="absolute inset-x-0 h-1.5 rounded-full bg-gray-200" />
         <div
-          className="absolute h-1.5 rounded-full bg-indigo-600 pointer-events-none"
+          className="absolute h-1.5 rounded-full bg-[#E27BA3] pointer-events-none"
           style={{ width: `${pct}%` }}
         />
         {options.map((_, i) => {
@@ -56,7 +56,7 @@ const StepSlider = ({ label, value, options, onChange }) => {
             <div
               key={i}
               className={`absolute w-2 h-2 rounded-full -translate-x-1/2 pointer-events-none ${
-                i <= current ? "bg-indigo-600" : "bg-gray-300"
+                i <= current ? "bg-[#E27BA3]" : "bg-gray-300"
               }`}
               style={{ left: `${dotPct}%` }}
             />
@@ -83,7 +83,7 @@ const StepSlider = ({ label, value, options, onChange }) => {
             key={opt}
             className={`text-[10px] ${
               i === current
-                ? "text-indigo-600 font-semibold"
+                ? " text-[#E27BA3] font-semibold"
                 : "text-gray-400"
             }`}
           >
@@ -134,7 +134,7 @@ const ValueSlider = ({ label, value, onChange, range, suffix = "", unit = "" }) 
       <div className="relative h-9 flex items-center">
         <div className="absolute inset-x-0 h-1.5 rounded-full bg-gray-200" />
         <div
-          className="absolute h-1.5 rounded-full bg-indigo-600 pointer-events-none"
+          className="absolute h-1.5 rounded-full bg-[#E27BA3] pointer-events-none"
           style={{ width: `${pct}%` }}
         />
         <div
@@ -187,8 +187,8 @@ const ChipPicker = ({ label, value, options, onChange }) => (
               transition-colors
               ${
                 isActive
-                  ? "bg-indigo-600 text-white border-indigo-600 shadow-[0_4px_10px_rgba(79,70,229,0.25)]"
-                  : "bg-white text-gray-700 border-gray-200 hover:border-indigo-300"
+                  ? "bg-[#E27BA3] text-white border-indigo-600 shadow-[0_4px_10px_rgba(79,70,229,0.25)]"
+                  : "bg-white text-gray-700 border-gray-200 hover:border-[#F0D9E2]"
               }
             `}
           >

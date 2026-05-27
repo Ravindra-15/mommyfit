@@ -56,7 +56,7 @@ const UserProfileHeader = ({ user, bodyProfile, onUserUpdated }) => {
   return (
     <div
       className="
-        bg-white rounded-2xl border border-[#E7EAF3]
+        bg-white rounded-2xl border border-[#EFE2E8]
         shadow-[0_1px_3px_rgba(16,24,40,0.04)]
         p-5 sm:p-6
       "
@@ -68,7 +68,7 @@ const UserProfileHeader = ({ user, bodyProfile, onUserUpdated }) => {
             w-16 h-16 rounded-full flex-shrink-0
             bg-gradient-to-br from-indigo-100 to-purple-100
             flex items-center justify-center
-            border border-[#D9DDF0]
+            border border-[#F0D9E2]
           "
         >
           <User size={28} className="text-indigo-400" />
@@ -99,7 +99,7 @@ const UserProfileHeader = ({ user, bodyProfile, onUserUpdated }) => {
                 ${
                   user.isActive
                     ? "bg-emerald-50 text-emerald-600 border border-emerald-100"
-                    : "bg-gray-100 text-[#6B7280] border border-[#D9DDF0]"
+                    : "bg-gray-100 text-[#6B7280] border border-[#F0D9E2]"
                 }
               `}
             >
@@ -146,7 +146,8 @@ const UserProfileHeader = ({ user, bodyProfile, onUserUpdated }) => {
               </div>
               <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full transition-all"
+                  className="h-full bg-gradient-to-r from-[#E27BA3]
+to-purple-500 rounded-full transition-all"
                   style={{ width: `${progressPercent}%` }}
                 />
               </div>

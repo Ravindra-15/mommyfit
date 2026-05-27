@@ -12,7 +12,7 @@ const programs = [
     textSide: "left",
     image: "/images/yoga-hero.png",
     btnBg:
-      "bg-[#E27BA3] hover:bg- [#4338CA] shadow-[0_6px_18px_rgba(79,70,229,0.28)]",
+      "bg-[#E27BA3] hover:bg- [#D86A95] shadow-[0_6px_18px_rgba(79,70,229,0.28)]",
     url: import.meta.env.VITE_YOGAT20_URL || "http://localhost:5174",
   },
   {

@@ -152,10 +152,10 @@ const PhotoUploader = ({
             disabled
               ? "cursor-not-allowed opacity-60"
               : isDragging
-                ? "border-indigo-500 bg-indigo-50 scale-105"
+                ? "border-[#E27BA3] bg-[#FBEAF1] scale-105"
                 : displayUrl
-                  ? "border-2 border-[#D9DDF0] hover:border-indigo-400"
-                  : "border-2 border-dashed border-gray-300 hover:border-indigo-400 hover:bg-[#F6F8FC]"
+                  ? "border-2 border-[#F0D9E2] hover:border-[#E27BA3]"
+                  : "border-2 border-dashed border-gray-300 hover:border-[#E27BA3] hover:bg-[#FBEAF1 ]"
           }
           ${displayUrl ? "" : "border-2 border-dashed"}
           group
@@ -213,9 +213,9 @@ const PhotoUploader = ({
           <div className="flex flex-col items-center gap-1.5">
             <Upload
               size={20}
-              className="text-gray-400 group-hover:text-indigo-500 transition-colors"
+              className="text-gray-400 group-hover:text-[#E27BA3]transition-colors"
             />
-            <p className="text-xs font-medium text-[#6B7280] group-hover:text-indigo-600 transition-colors">
+            <p className="text-xs font-medium text-[#6B7280] group-hover: text-[#E27BA3] transition-colors">
               Upload Photo
             </p>
           </div>

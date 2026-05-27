@@ -110,7 +110,7 @@ const ProfileSlider = ({
         </div>
 
         <div
-          className="absolute h-1.5 rounded-full bg-indigo-600 pointer-events-none"
+          className="absolute h-1.5 rounded-full bg-[#E27BA3] pointer-events-none"
           style={{ width: `${pct}%` }}
         />
 
@@ -164,7 +164,7 @@ const Step1Physical = ({ data, onChange }) => {
       {/* 📏 PHYSICAL MEASUREMENTS */}
       <section>
         <div className="flex items-center gap-2 mb-4">
-          <div className="w-7 h-7 rounded-lg bg-indigo-50 flex items-center justify-center">
+          <div className="w-7 h-7 rounded-lg bg-[#FBEAF1] flex items-center justify-center">
             <Ruler size={14} className="text-indigo-500" />
           </div>
           <h3 className="text-sm font-bold text-gray-900">

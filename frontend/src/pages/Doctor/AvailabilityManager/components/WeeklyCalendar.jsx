@@ -26,7 +26,7 @@ const SlotCell = ({
   onClick,
   onContextMenu,
 }) => {
-  if (!slot) return <div className="h-12 border border-[#E7EAF3] rounded-md" />;
+  if (!slot) return <div className="h-12 border border-[#EFE2E8]rounded-md" />;
 
   const handleContextMenu = (e) => {
     e.preventDefault();
@@ -67,7 +67,7 @@ const SlotCell = ({
         onContextMenu={handleContextMenu}
         className="
           h-12 rounded-md
-          bg-gray-100 border border-[#D9DDF0]
+          bg-gray-100 border border-[#F0D9E2]
           flex items-center justify-center
           gap-1
           cursor-pointer
@@ -97,8 +97,8 @@ const SlotCell = ({
         className={`
           h-12 rounded-md
           ${isPending && isPendingAvailable
-            ? "bg-indigo-100 border-2 border-dashed border-indigo-500"
-            : "bg-indigo-600 border border-indigo-700 hover:bg-indigo-700"
+            ? "bg-indigo-100 border-2 border-dashed border-[#E27BA3]"
+            : "bg-[#E27BA3] border border-indigo-700  hover:bg-[#D86A95]"
           }
           cursor-pointer
           transition-colors
@@ -116,9 +116,9 @@ const SlotCell = ({
       onContextMenu={handleContextMenu}
       className="
         h-12 rounded-md
-        bg-white border border-[#E7EAF3]
+        bg-white border border-[#EFE2E8]
         cursor-pointer
-        hover:bg-indigo-50
+        hover:bg-[#FBEAF1]
         transition-colors
       "
       title="Click to mark available"
@@ -139,7 +139,7 @@ const WeeklyCalendar = ({
 }) => {
   if (loading || !weekData) {
     return (
-      <div className="bg-white rounded-2xl border border-[#E7EAF3] p-6 animate-pulse">
+      <div className="bg-white rounded-2xl border border-[#EFE2E8]p-6 animate-pulse">
         <div className="grid grid-cols-8 gap-2">
           {Array.from({ length: 80 }).map((_, i) => (
             <div key={i} className="h-12 bg-gray-100 rounded-md" />
@@ -155,7 +155,7 @@ const WeeklyCalendar = ({
   return (
     <div
       className="
-        bg-white rounded-2xl border border-[#E7EAF3]
+        bg-white rounded-2xl border border-[#EFE2E8]
         shadow-[0_1px_3px_rgba(16,24,40,0.04)]
         p-4 sm:p-5
         overflow-x-auto
@@ -165,7 +165,7 @@ const WeeklyCalendar = ({
         {/* ============================================ */}
         {/* 📅 HEADER ROW                                 */}
         {/* ============================================ */}
-        <div className="grid grid-cols-8 gap-2 mb-2 pb-2 border-b border-[#E7EAF3]">
+        <div className="grid grid-cols-8 gap-2 mb-2 pb-2 border-b border-[#EFE2E8]">
           <div className="text-[11px] font-semibold tracking-wider text-[#6B7280] uppercase pl-1">
             Time
           </div>
@@ -175,14 +175,14 @@ const WeeklyCalendar = ({
               <div key={day.date} className="text-center">
                 <p
                   className={`text-[11px] font-semibold tracking-wider uppercase ${
-                    today ? "text-indigo-600" : "text-[#6B7280]"
+                    today ? " text-[#E27BA3]" : "text-[#6B7280]"
                   }`}
                 >
                   {formatShortDay(day.date)}
                 </p>
                 <p
                   className={`text-[10px] mt-0.5 ${
-                    today ? "text-indigo-500 font-semibold" : "text-gray-400"
+                    today ? "text-[#E27BA3]font-semibold" : "text-gray-400"
                   }`}
                 >
                   {formatMonthDay(day.date)}

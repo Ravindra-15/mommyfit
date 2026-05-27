@@ -138,16 +138,16 @@ const AddBreakModal = ({ open, onClose, onCreated }) => {
       aria-modal="true"
     >
       <div
-        className="bg-white rounded-2xl border border-[#E7EAF3] shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+        className="bg-white rounded-2xl border border-[#EFE2E8]shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#E7EAF3]">
+        <div className="flex items-center justify-between px-6 py-4 border-b border-[#EFE2E8]">
           <h2 className="text-lg font-bold text-[#1F2937]">Add a Break</h2>
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded-lg text-gray-400 hover:text-[#374151] hover:bg-[#F6F8FC] transition-colors"
+            className="p-1.5 rounded-lg text-gray-400 hover:text-[#374151] hover:bg-[#FBEAF1]transition-colors"
             aria-label="Close"
           >
             <X size={18} />
@@ -162,7 +162,7 @@ const AddBreakModal = ({ open, onClose, onCreated }) => {
               onClick={() => setMode("slot")}
               className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                 mode === "slot"
-                  ? "bg-white text-indigo-600 shadow-sm"
+                  ? "bg-white  text-[#E27BA3] shadow-sm"
                   : "text-[#6B7280] hover:text-[#1F2937]"
               }`}
             >
@@ -173,7 +173,7 @@ const AddBreakModal = ({ open, onClose, onCreated }) => {
               onClick={() => setMode("days")}
               className={`px-4 py-1.5 rounded-lg text-xs font-semibold transition-colors ${
                 mode === "days"
-                  ? "bg-white text-indigo-600 shadow-sm"
+                  ? "bg-white  text-[#E27BA3] shadow-sm"
                   : "text-[#6B7280] hover:text-[#1F2937]"
               }`}
             >
@@ -202,7 +202,7 @@ const AddBreakModal = ({ open, onClose, onCreated }) => {
         </div>
 
         {/* Footer */}
-        <div className="px-6 py-4 border-t border-[#E7EAF3] flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div className="px-6 py-4 border-t border-[#EFE2E8]flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-xs text-[#6B7280] truncate">
             <span className="font-semibold text-[#374151]">Selected:</span> {summary}
           </p>
@@ -210,7 +210,7 @@ const AddBreakModal = ({ open, onClose, onCreated }) => {
             <button
               type="button"
               onClick={onClose}
-              className="px-4 py-2 rounded-xl text-sm font-medium text-[#6B7280] hover:bg-[#F6F8FC] transition-colors"
+              className="px-4 py-2 rounded-xl text-sm font-medium text-[#6B7280] hover:bg-[#FBEAF1]transition-colors"
             >
               Cancel
             </button>
@@ -218,7 +218,7 @@ const AddBreakModal = ({ open, onClose, onCreated }) => {
               type="button"
               onClick={handleSubmit}
               disabled={submitting}
-              className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2 rounded-xl text-sm font-semibold text-white bg-gradient-to-r from-[#E27BA3]to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {submitting ? (
                 <>
@@ -250,7 +250,7 @@ const SlotMode = ({ slotDate, setSlotDate, selectedSlots, toggleSlot }) => (
         type="date"
         value={slotDate}
         onChange={(e) => setSlotDate(e.target.value)}
-        className="w-full px-4 py-2.5 bg-white border border-[#D9DDF0] rounded-xl text-sm text-[#1F2937] focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+        className="w-full px-4 py-2.5 bg-white border border-[#F0D9E2] rounded-xl text-sm text-[#1F2937] focus:outline-none focus:border-[#E27BA3] focus:ring-1 focus:ring-indigo-500"
       />
     </div>
 
@@ -283,8 +283,8 @@ const SlotGroup = ({ label, slots, selected, onToggle }) => (
             onClick={() => onToggle(slot)}
             className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors border ${
               isSelected
-                ? "bg-indigo-600 text-white border-indigo-600"
-                : "bg-white text-[#374151] border-[#D9DDF0] hover:border-indigo-300"
+                ? "bg-[#E27BA3] text-white border-indigo-600"
+                : "bg-white text-[#374151] border-[#F0D9E2] hover:border-[#F0D9E2]"
             }`}
           >
             {hour12}:00 {period}
@@ -309,7 +309,7 @@ const DaysMode = ({ fromDate, setFromDate, toDate, setToDate }) => (
         type="date"
         value={fromDate}
         onChange={(e) => setFromDate(e.target.value)}
-        className="w-full px-4 py-2.5 bg-white border border-[#D9DDF0] rounded-xl text-sm text-[#1F2937] focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+        className="w-full px-4 py-2.5 bg-white border border-[#F0D9E2] rounded-xl text-sm text-[#1F2937] focus:outline-none focus:border-[#E27BA3] focus:ring-1 focus:ring-indigo-500"
       />
     </div>
 
@@ -322,7 +322,7 @@ const DaysMode = ({ fromDate, setFromDate, toDate, setToDate }) => (
         type="date"
         value={toDate}
         onChange={(e) => setToDate(e.target.value)}
-        className="w-full px-4 py-2.5 bg-white border border-[#D9DDF0] rounded-xl text-sm text-[#1F2937] focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+        className="w-full px-4 py-2.5 bg-white border border-[#F0D9E2] rounded-xl text-sm text-[#1F2937] focus:outline-none focus:border-[#E27BA3] focus:ring-1 focus:ring-indigo-500"
       />
     </div>
   </div>

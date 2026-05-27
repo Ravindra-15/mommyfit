@@ -76,9 +76,9 @@ const StepIndicator = ({ currentStep }) => (
                 border-2 transition-all duration-300
                 ${
                   isCompleted
-                    ? "bg-indigo-600 border-indigo-600 text-white"
+                    ? "bg-[#E27BA3] border-indigo-600 text-white"
                     : isActive
-                    ? "bg-indigo-600 border-indigo-600 text-white shadow-[0_6px_18px_rgba(79,70,229,0.35)]"
+                    ? "bg-[#E27BA3] border-indigo-600 text-white shadow-[0_6px_18px_rgba(79,70,229,0.35)]"
                     : "bg-white border-gray-200 text-gray-300"
                 }
               `}
@@ -95,7 +95,7 @@ const StepIndicator = ({ currentStep }) => (
                 leading-tight max-w-[110px]
                 ${
                   isActive || isCompleted
-                    ? "text-indigo-600"
+                    ? " text-[#E27BA3]"
                     : "text-gray-400"
                 }
               `}
@@ -108,7 +108,7 @@ const StepIndicator = ({ currentStep }) => (
           {!isLast && (
             <div className="flex-1 h-0.5 mt-6 mx-1 sm:mx-2 rounded-full overflow-hidden bg-gray-200">
               <div
-                className={`h-full bg-indigo-600 transition-all duration-300 ${
+                className={`h-full bg-[#E27BA3] transition-all duration-300 ${
                   step.id < currentStep ? "w-full" : "w-0"
                 }`}
               />
@@ -214,7 +214,7 @@ const BodyProfileWizard = () => {
           <button
             type="button"
             onClick={handleBack}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover:text-indigo-600 transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-600 hover: text-[#E27BA3] transition-colors"
             disabled={saving}
           >
             <ArrowLeft size={16} />
@@ -309,7 +309,7 @@ const BodyProfileWizard = () => {
                     inline-flex items-center justify-center gap-1.5
                     px-6 py-2.5 rounded-full
                     text-sm font-semibold text-white
-                    bg-indigo-600 hover:bg-indigo-700
+                    bg-[#E27BA3]  hover:bg-[#D86A95]
                     transition-colors
                     shadow-[0_4px_14px_rgba(79,70,229,0.3)]
                     disabled:opacity-50 disabled:cursor-not-allowed
@@ -336,7 +336,7 @@ const BodyProfileWizard = () => {
                     inline-flex items-center justify-center gap-1.5
                     px-6 py-2.5 rounded-full
                     text-sm font-semibold text-white
-                    bg-indigo-600 hover:bg-indigo-700
+                    bg-[#E27BA3]  hover:bg-[#D86A95]
                     transition-colors
                     shadow-[0_4px_14px_rgba(79,70,229,0.3)]
                     disabled:opacity-50 disabled:cursor-not-allowed

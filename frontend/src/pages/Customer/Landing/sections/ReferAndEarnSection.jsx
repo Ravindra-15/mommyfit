@@ -21,7 +21,7 @@ export default function ReferAndEarnSection() {
   return (
     <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden bg-[#FDF6F9]  rounded-3xl border border-[#E7EAF3] px-6 sm:px-12 py-10 sm:py-14 mb-10">
+        <div className="relative overflow-hidden bg-[#FDF6F9]  rounded-3xl border border-[#EFE2E8]px-6 sm:px-12 py-10 sm:py-14 mb-10">
           {/* Top-right decorative image */}
           <img
             src="/images/refernearn.png"

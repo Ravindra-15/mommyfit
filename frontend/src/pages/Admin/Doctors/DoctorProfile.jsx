@@ -133,7 +133,7 @@ const DoctorProfile = () => {
     return (
       <div className="flex items-center justify-center py-20">
         <div className="flex flex-col items-center gap-3">
-          <Loader2 size={28} className="text-indigo-600 animate-spin" />
+          <Loader2 size={28} className=" text-[#E27BA3] animate-spin" />
           <p className="text-sm text-[#6B7280]">Loading doctor profile...</p>
         </div>
       </div>
@@ -155,7 +155,7 @@ const DoctorProfile = () => {
           </p>
           <button
             onClick={() => navigate("/admin/doctors")}
-            className="text-sm text-indigo-600 font-medium hover:underline"
+            className="text-sm  text-[#E27BA3] font-medium hover:underline"
           >
             Back to Doctor Directory
           </button>
@@ -175,7 +175,7 @@ const DoctorProfile = () => {
         onClick={() => navigate("/admin/doctors")}
         className="
           inline-flex items-center gap-1.5
-          text-sm font-medium text-[#6B7280] hover:text-indigo-600
+          text-sm font-medium text-[#6B7280] hover: text-[#E27BA3]
           transition-colors
         "
       >
@@ -188,7 +188,7 @@ const DoctorProfile = () => {
       {/* ============================================ */}
       <div
         className="
-          bg-white rounded-2xl border border-[#E7EAF3]
+          bg-white rounded-2xl border border-[#EFE2E8]
           shadow-[0_1px_3px_rgba(16,24,40,0.04)]
           px-6 sm:px-8 py-6
         "
@@ -277,7 +277,7 @@ const DoctorProfile = () => {
               inline-flex items-center justify-center gap-2
               px-5 py-2.5 rounded-xl
               text-sm font-semibold
-              bg-indigo-600 hover:bg-indigo-700
+              bg-[#E27BA3]  hover:bg-[#D86A95]
               text-white border border-transparent
               shadow-sm shadow-indigo-200
               transition-colors
@@ -296,7 +296,7 @@ const DoctorProfile = () => {
       {/* ============================================ */}
       <div
         className="
-          bg-white rounded-2xl border border-[#E7EAF3]
+          bg-white rounded-2xl border border-[#EFE2E8]
           shadow-[0_1px_3px_rgba(16,24,40,0.04)]
           px-6 sm:px-8 py-6 sm:py-7
         "
@@ -333,7 +333,7 @@ const DoctorProfile = () => {
                   key={spec}
                   className="
             inline-flex px-2.5 py-1
-            bg-indigo-50 text-indigo-700
+            bg-[#FBEAF1] text-indigo-700
             text-xs font-medium
             rounded-md
           "
@@ -345,7 +345,7 @@ const DoctorProfile = () => {
           )}
         </section>
         {/* Divider */}
-        <div className="my-6 border-t border-[#E7EAF3]" />
+        <div className="my-6 border-t border-[#EFE2E8]" />
 
         {/* 📞 Contact Information */}
         <section>
@@ -358,13 +358,13 @@ const DoctorProfile = () => {
             <div
               className="
                 flex items-start gap-3 p-4
-                bg-[#F6F8FC] rounded-xl border border-[#E7EAF3]
+                bg-[#FBEAF1]rounded-xl border border-[#EFE2E8]
               "
             >
               <div
                 className="
                   w-10 h-10 rounded-lg flex-shrink-0
-                  bg-indigo-50 flex items-center justify-center
+                  bg-[#FBEAF1] flex items-center justify-center
                 "
               >
                 <Mail size={18} className="text-indigo-500" />
@@ -389,7 +389,7 @@ const DoctorProfile = () => {
             <div
               className="
                 flex items-start gap-3 p-4
-                bg-[#F6F8FC] rounded-xl border border-[#E7EAF3]
+                bg-[#FBEAF1]rounded-xl border border-[#EFE2E8]
               "
             >
               <div
@@ -429,7 +429,7 @@ const DoctorProfile = () => {
         {/* Optional: Account activity */}
         {doctor.lastLogin && (
           <>
-            <div className="my-6 border-t border-[#E7EAF3]" />
+            <div className="my-6 border-t border-[#EFE2E8]" />
             <section>
               <h2 className="text-base font-bold text-[#1F2937] mb-3">
                 Account Activity

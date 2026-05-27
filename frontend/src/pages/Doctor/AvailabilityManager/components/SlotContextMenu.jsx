@@ -56,7 +56,7 @@ const SlotContextMenu = ({
       className="
         fixed z-50
         min-w-[200px]
-        bg-white rounded-xl border border-[#D9DDF0]
+        bg-white rounded-xl border border-[#F0D9E2]
         shadow-[0_8px_24px_rgba(16,24,40,0.12)]
         py-1.5
       "
@@ -121,7 +121,7 @@ const SlotContextMenu = ({
 // ============================================
 const MenuItem = ({ icon: Icon, label, onClick, tone = "default" }) => {
   const colors = {
-    default: "text-[#374151] hover:bg-[#F6F8FC] hover:text-indigo-600",
+    default: "text-[#374151] hover:bg-[#FBEAF1]hover: text-[#E27BA3]",
     danger: "text-red-600 hover:bg-red-50",
     success: "text-emerald-600 hover:bg-emerald-50",
   };
@@ -144,6 +144,6 @@ const MenuItem = ({ icon: Icon, label, onClick, tone = "default" }) => {
   );
 };
 
-const Divider = () => <div className="my-1 border-t border-[#E7EAF3]" />;
+const Divider = () => <div className="my-1 border-t border-[#EFE2E8]" />;
 
 export default SlotContextMenu;

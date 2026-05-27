@@ -32,7 +32,7 @@ export default function HealingCTASection() {
                   Start your healing journey
                   <br />
                   by Booking{" "}
-                  <span className="text-[#4F46E5]">Health Expert</span>
+                  <span className="text-[#E27BA3]">Health Expert</span>
                 </h2>
 
                 <ul className="space-y-3 mb-7">
@@ -57,8 +57,8 @@ export default function HealingCTASection() {
                 <button
                   onClick={handleBookConsultation}
                   className="
-                bg-[#4F46E5]
-                hover:bg-[#4338CA]
+                bg-[#E27BA3]
+                hover:bg-[#D86A95]
                 text-white
                 text-sm
                 sm:text-[15px]

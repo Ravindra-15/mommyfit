@@ -94,7 +94,7 @@
 
 //       <Modal isOpen={open} onClose={() => setOpen(false)}>
 //         <div className="text-center px-2">
-//           <h2 className="text-2xl font-bold text-teal-800 mb-4">
+//           <h2 className="text-2xl font-bold  text-[#2D3D4A]mb-4">
 //             Welcome to MommyFit
 //           </h2>
 
@@ -279,7 +279,7 @@ const BookDoctor = () => {
       {/* ============================================ */}
       <Modal isOpen={open} onClose={() => setOpen(false)}>
         <div className="text-center px-2">
-          <h2 className="text-2xl font-bold text-teal-800 mb-4">
+          <h2 className="text-2xl font-bold  text-[#2D3D4A]mb-4">
             Welcome to MommyFit
           </h2>
           {/* 👤 Avatar — clickable to upload */}
@@ -314,7 +314,7 @@ const BookDoctor = () => {
               <button
                 type="button"
                 onClick={handlePhotoClick}
-                className="mt-2 text-sm text-orange-500 hover:underline font-medium"
+                className="mt-2 text-sm  text-[#E27BA3]hover:underline font-medium"
               >
                 {uploadingPhoto ? "Uploading…" : "Upload your pic"}
               </button>

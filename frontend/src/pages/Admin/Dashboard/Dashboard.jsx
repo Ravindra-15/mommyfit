@@ -85,8 +85,8 @@ const Dashboard = () => {
         label: "Total Instructors",
         value: formatNumber(stats.totalInstructors),
         icon: UserCog,
-        iconBg: "bg-[#F3F1FF]",
-        iconColor: "text-[#4F46E5]",
+        iconBg: "bg-[#FBEAF1   ]",
+        iconColor: "text-[#E27BA3]",
       },
       {
         id: "revenue-month",

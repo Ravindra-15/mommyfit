@@ -118,7 +118,6 @@ function App() {
           }
         />
         <Route path="/home" element={<LandingPage />} />
-
         {/* <Route path="/book-doctor" element={<BookDoctor />} />
         <Route path="/book-doctor/:id" element={<DoctorDetail />} /> */}
         <Route

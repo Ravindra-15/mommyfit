@@ -83,7 +83,7 @@ export default function ProgramCheckout() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FBEAF1]flex items-center justify-center px-4 py-10">
+    <div className="min-h-screen bg-[#FBEAF1] flex items-center justify-center px-4 py-10">
       <div className="bg-white rounded-[32px] shadow-[0_18px_50px_rgba(15,23,42,0.08)] w-full max-w-3xl overflow-hidden border border-[#EFE2E8]">
         {/* HEADER */}
         <div className="bg-[#D98BA8] px-8 py-7 relative">
@@ -116,7 +116,7 @@ export default function ProgramCheckout() {
                   expert-led sessions and progress tracking.
                 </p>
               </div>
-              <div className=" bg-[#FBF3F7]  border border-[#EFE2E8]rounded-2xl px-4 py-3 flex flex-col items-center gap-1 shrink-0">
+              <div className=" bg-[#FBF3F7]  border border-[#EFE2E8] rounded-2xl px-4 py-3 flex flex-col items-center gap-1 shrink-0">
                 <Calendar size={18} className="text-[#E27BA3]" />
                 <span className="text-xs font-semibold text-[#374151] text-center leading-tight">
                   {tenure}
@@ -139,7 +139,7 @@ export default function ProgramCheckout() {
                   <span className="text-[#6B7280]">Duration</span>
                   <span className="font-semibold text-gray-800">{tenure}</span>
                 </div>
-                <div className="border-t border-[#EFE2E8]pt-3 flex items-center justify-between">
+                <div className="border-t border-[#EFE2E8] pt-3 flex items-center justify-between">
                   <span className="font-bold text-gray-800">Total</span>
                   <span className="text-3xl font-bold text-[#E27BA3]">
                     ${price}
@@ -160,7 +160,7 @@ export default function ProgramCheckout() {
                   placeholder="Enter referral code"
                   className="flex-1 border border-[#F0D9E2] rounded-2xl px-4 py-3 text-sm outline-none focus:border-[#E27BA3] transition-colors"
                 />
-                <button className="px-5 rounded-2xl border border-[#F0D9E2] text-[#E27BA3] font-semibold hover: bg-[#FBF3F7]  transition-colors text-sm">
+                <button className="px-5 rounded-2xl border border-[#F0D9E2] text-[#E27BA3] font-semibold hover:bg-[#FBF3F7]  transition-colors text-sm">
                   Apply
                 </button>
               </div>

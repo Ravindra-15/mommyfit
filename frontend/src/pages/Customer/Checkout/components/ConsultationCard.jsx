@@ -81,7 +81,7 @@ const ConsultationCard = ({
 
       {/* 📅 Date + Time */}
       <div className="grid grid-cols-2 gap-3 mt-4">
-        <div className="border border-[#EFE2E8]rounded-xl px-3 py-2.5">
+        <div className="border border-[#EFE2E8] rounded-xl px-3 py-2.5">
           <div className="flex items-center gap-1.5 text-[11px] text-[#6B7280] font-semibold tracking-wide uppercase">
             <Calendar size={11} />
             Date
@@ -104,7 +104,7 @@ const ConsultationCard = ({
 
       {/* 💰 Totals (only on checkout) */}
       {showTotals && typeof fee === "number" && (
-        <div className="mt-5 pt-4 border-t border-[#EEF2F7]space-y-2">
+        <div className="mt-5 pt-4 border-t border-[#EEF2F7] space-y-2">
           <div className="flex items-center justify-between text-sm">
             <span className="text-[#6B7280]">Consultation Fee</span>
             <span className="font-semibold text-[#1F2937]">${fee.toFixed(2)}</span>

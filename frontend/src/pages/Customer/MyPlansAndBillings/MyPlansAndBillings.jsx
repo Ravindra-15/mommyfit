@@ -162,7 +162,7 @@ export default function MyPlansAndBillings() {
               ) : (
                 <button
                   onClick={() => navigate(`/programs/${PROGRAM_ID}/tenure`)}
-                  className="inline-flex items-center justify-center gap-2 border border-[#E27BA3] text-[#E27BA3] hover: bg-[#FBF3F7]  text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shrink-0"
+                  className="inline-flex items-center justify-center gap-2 border border-[#E27BA3] text-[#E27BA3] hover:bg-[#FBF3F7]  text-sm font-semibold px-5 py-2.5 rounded-full transition-colors shrink-0"
                 >
                   Renew Program
                 </button>

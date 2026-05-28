@@ -275,7 +275,7 @@ export default function ProgramDashboard() {
 
                <button
                   onClick={() => navigate(`/programs/${id}/progress-report`)}
-                  className="mt-5 bg-[#FBEAF1]border border-[#EFE2E8]rounded-2xl px-4 py-3 inline-flex items-center gap-4 w-full sm:w-auto text-left hover:border-[#E27BA3] transition-colors"
+                  className="mt-5 bg-[#FBEAF1] border border-[#EFE2E8] rounded-2xl px-4 py-3 inline-flex items-center gap-4 w-full sm:w-auto text-left hover:border-[#E27BA3] transition-colors"
                 >
                   <div>
                     <p className="text-xs text-[#9CA3AF] mb-0.5">

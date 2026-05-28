@@ -52,7 +52,7 @@ const ChipCard = ({ benefit, isActive = false }) => {
   const Icon = benefit.icon;
   return (
     <div
-      className={`bg-white border border-[#EFE2E8]rounded-2xl shadow-[0_8px_24px_rgba(16,24,40,0.08)] px-5 py-5 w-[200px] h-[180px] flex flex-col items-center justify-center text-center transition-all duration-300 ${
+      className={`bg-white border border-[#EFE2E8] rounded-2xl shadow-[0_8px_24px_rgba(16,24,40,0.08)] px-5 py-5 w-[200px] h-[180px] flex flex-col items-center justify-center text-center transition-all duration-300 ${
         isActive ? "scale-110 shadow-[0_12px_32px_rgba(16,24,40,0.15)]" : "scale-100"
       }`}
     >

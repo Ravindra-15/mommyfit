@@ -118,8 +118,8 @@ function App() {
           }
         />
         <Route path="/home" element={<LandingPage />} />
-        {/* <Route path="/book-doctor" element={<BookDoctor />} />
-        <Route path="/book-doctor/:id" element={<DoctorDetail />} /> */}
+        <Route path="/book-doctor" element={<BookDoctor />} />
+        <Route path="/book-doctor/:id" element={<DoctorDetail />} />
         <Route
           path="/checkout"
           element={
@@ -155,14 +155,14 @@ function App() {
           }
         /> */}
 
-        <Route
+        {/* <Route
           path="/notifications"
           element={
             <ProtectedRoute>
               <CustomerNotifications />
             </ProtectedRoute>
           }
-        />
+        /> */}
 
         <Route
           path="/my-plans-and-billings"

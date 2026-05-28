@@ -145,7 +145,7 @@ const Checkout = () => {
   // 🎨 RENDER
   // ============================================
   return (
-    <div className="min-h-screen bg-[#FBEAF1]flex flex-col">
+    <div className="min-h-screen bg-[#FBEAF1] flex flex-col">
       <CustomerNavbar />
 
       <main className="flex-1">
@@ -154,7 +154,7 @@ const Checkout = () => {
           <button
             type="button"
             onClick={() => navigate(-1)}
-            className="inline-flex items-center gap-1.5 text-sm font-mediumtext-[#6B7280] hover:text-[#E27BA3] transition-colors"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[#6B7280] hover:text-[#E27BA3] transition-colors"
           >
             <ArrowLeft size={16} />
             Back
@@ -175,14 +175,14 @@ const Checkout = () => {
           {/* 📋 CHECKOUT BODY                              */}
           {/* ============================================ */}
           {loading ? (
-            <div className="bg-white rounded-2xl border border-[#EFE2E8]p-6 animate-pulse h-72" />
+            <div className="bg-white rounded-2xl border border-[#EFE2E8] p-6 animate-pulse h-72" />
           ) : error ? (
-            <div className="bg-white rounded-2xl border border-[#EFE2E8]px-6 py-12 text-center">
+            <div className="bg-white rounded-2xl border border-[#EFE2E8] px-6 py-12 text-center">
               <p className="text-sm font-medium text-[#374151] mb-1">{error}</p>
               <button
                 type="button"
                 onClick={() => navigate("/book-doctor")}
-                className="mt-3 text-xs font-semibold text- [#D86A95] hover:underline"
+                className="mt-3 text-xs font-semibold text-[#D86A95] hover:underline"
               >
                 Browse doctors
               </button>

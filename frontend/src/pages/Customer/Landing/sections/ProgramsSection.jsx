@@ -41,18 +41,18 @@ const programs = [
   },
 
   {
-    id: "mommyfit",
-    title: "MommyFit",
-    subtitle:
-      "Nurturing You and Your Baby. Safe, Guided Fitness for Motherhood",
-    bg: "bg-[#FDE8F0]",
-    accent: "bg-[#FFD3E3]",
+    id: "diabmukt",
+    title: "Diabmukt",
+    subtitle: "Data-Driven Reversal. Take Control of Your Metabolic Health.",
+    bg: "bg-[#EAF0FB]",
+    accent: "bg-[#DCE7FF]",
     textSide: "right",
-    image: "/images/mommyfitFamily.png",
+    image: "/images/diabmuktCouple.png",
     btnBg:
-      "bg-pink-500 hover:bg-pink-600 shadow-[0_4px_14px_rgba(236,72,153,0.25)]",
-    url: import.meta.env.VITE_MOMMYFIT_URL || "#",
+      "bg-[#4F6EF7] hover:bg-[#3F5EE6] shadow-[0_4px_14px_rgba(79,110,247,0.30)]",
+    url: import.meta.env.VITE_DIABMUKT_URL || "#",
   },
+
 ];
 
 export default function ProgramsSection() {
@@ -131,7 +131,7 @@ export default function ProgramsSection() {
                     }
 
                     ${
-                      prog.id === "mommyfit"
+                      prog.id === "diabmukt"
                         ? `
                           w-[190px] h-[190px]
                           sm:w-[250px] sm:h-[250px]
@@ -273,19 +273,25 @@ export default function ProgramsSection() {
                       }
 
                       ${
-                        prog.id === "mommyfit"
-                          ? `
-                            left-[-25px]
-                            sm:left-[0px]
-                            lg:left-auto
+                    prog.id === "diabmukt"
+                      ? `
+                       w-[360px]
+                        sm:w-[420px]
+                        md:w-[480px]
+                        lg:w-[560px]
+                        xl:w-[600px]
 
-                            bottom-[-10px]
-                            lg:bottom-auto
+                        left-[-20px]
+                        sm:left-[0px]
+                        lg:left-auto
 
-                            lg:-translate-x-12
-                          `
-                          : ""
-                      }
+                        bottom-[-10px]
+                        lg:bottom-auto
+
+                        lg:-translate-x-4
+                      `
+                      : ""
+                  }
                     `}
                   />
                 </div>

@@ -6,15 +6,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import {
-  Link2,
-  Send,
-  Users,
-  Trophy,
-  Copy,
-  Check,
-  Share2,
-} from "lucide-react";
+import { Link2, Send, Users, Trophy, Copy, Check, Share2 } from "lucide-react";
 
 import CustomerNavbar from "../../../components/customer/layout/CustomerNavbar";
 import CustomerFooter from "../../../components/customer/layout/CustomerFooter";
@@ -27,7 +19,8 @@ export default function ReferAndEarnPage() {
   const [copied, setCopied] = useState(false);
 
   // Static referral link
-  const username = user?.nickName || user?.fullName?.split(" ")[0]?.toLowerCase() || "you";
+  const username =
+    user?.nickName || user?.fullName?.split(" ")[0]?.toLowerCase() || "you";
   const referralLink = `zealtho.com/invite/${username}`;
 
   const handleCopy = async () => {
@@ -43,7 +36,7 @@ export default function ReferAndEarnPage() {
 
   const handleWhatsAppShare = () => {
     const message = encodeURIComponent(
-      `Hey! Join Zealtho with my referral and get 30 days of Yoga T20 free: ${referralLink}`
+      `Hey! Join Zealtho with my referral and get 30 days of Mommyfit free: ${referralLink}`,
     );
     window.open(`https://wa.me/?text=${message}`, "_blank");
   };
@@ -60,9 +53,9 @@ export default function ReferAndEarnPage() {
           <div className="relative overflow-hidden bg-white rounded-3xl border border-[#EFE2E8]px-6 sm:px-12 py-10 sm:py-14 mb-10">
             {/* Top-right decorative image */}
             <img
-              src="/images/referandearn.png"
+              src="/images/refernearn.png"
               alt=""
-              className="absolute -top-6 -right-6 sm:-top-24 sm:-right-24 lg:-top-28 lg:-right-28 w-20 sm:w-64 lg:w-80 pointer-events-none select-none"
+              className="absolute -top-10 [transform:scaleY(-1)] -right-20 sm:-top-32 sm:-right-32 lg:-top-32 lg:-right-40 w-44 sm:w-96 lg:w-[26rem] pointer-events-none select-none"
             />
             <div className="relative z-10 text-center max-w-3xl mx-auto">
               <h1 className="text-3xl sm:text-3xl lg:text-4xl font-bold text-[#1F2937] mb-2">
@@ -91,12 +84,12 @@ export default function ReferAndEarnPage() {
                 <StepCircle
                   icon={Trophy}
                   title="Your friend gets 30"
-                  subtitle="Days of Yoga T20"
+                  subtitle="Days of Mommyfit"
                 />
                 <StepCircle
                   icon={Users}
                   title="You receive 30 Days of"
-                  subtitle="Yoga T20 Subscription"
+                  subtitle="Mommyfit Subscription"
                 />
               </div>
             </div>
@@ -212,8 +205,12 @@ const ProgressCard = ({ icon: Icon, label, value, highlight, footer }) => {
         <div className="w-14 h-14 rounded-full bg-white/20 flex items-center justify-center mb-4">
           <Icon size={22} className="text-white" />
         </div>
-        <p className="text-base font-medium text-white/90 text-center">{label}</p>
-        <p className="text-5xl font-bold text-white text-center mt-3">{value}</p>
+        <p className="text-base font-medium text-white/90 text-center">
+          {label}
+        </p>
+        <p className="text-5xl font-bold text-white text-center mt-3">
+          {value}
+        </p>
         {footer}
       </div>
     );
@@ -224,8 +221,12 @@ const ProgressCard = ({ icon: Icon, label, value, highlight, footer }) => {
       <div className="w-14 h-14 rounded-full  bg-[#FBF3F7]  flex items-center justify-center mb-4">
         <Icon size={22} className="text-[#E27BA3]" />
       </div>
-      <p className="text-base font-medium text-[#6B7280] text-center">{label}</p>
-      <p className="text-5xl font-bold text-[#1F2937] text-center mt-3">{value}</p>
+      <p className="text-base font-medium text-[#6B7280] text-center">
+        {label}
+      </p>
+      <p className="text-5xl font-bold text-[#1F2937] text-center mt-3">
+        {value}
+      </p>
     </div>
   );
 };

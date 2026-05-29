@@ -19,14 +19,14 @@ function StepCircle({ icon: Icon, title, subtitle }) {
 
 export default function ReferAndEarnSection() {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white">
-      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-12 sm:py-16 lg:py-8 bg-white">
+      <div className="max-w-[1500px] mx-auto px-4 sm:px-6 lg:px-4">
         <div className="relative overflow-hidden bg-[#FDF6F9]  rounded-3xl border border-[#EFE2E8]px-6 sm:px-12 py-10 sm:py-14 mb-10">
           {/* Top-right decorative image */}
           <img
             src="/images/refernearn.png"
             alt=""
-            className="absolute -top-6 -right-12 sm:-top-24 sm:-right-24 lg:-top-28 lg:-right-40 w-36 sm:w-96 lg:w-[28rem] pointer-events-none select-none"
+            className="absolute -top-6 -right-12 [transform:scaleY(-1)] sm:-top-24 sm:-right-24 lg:-top-28 lg:-right-40 w-36 sm:w-96 lg:w-[28rem] pointer-events-none select-none"
           />
 
           <div className="relative z-10 text-center max-w-3xl mx-auto">

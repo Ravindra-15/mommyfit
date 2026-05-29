@@ -198,7 +198,7 @@ const About = () => {
           <div
             className="
               relative overflow-hidden
-              bg-gradient-to-br from-[#E27BA3] to- [#D86A95]
+              bg-gradient-to-br from-[#E27BA3] to-[#D86A95]
               rounded-2xl sm:rounded-3xl
               p-6 sm:p-8 md:p-10 lg:p-14
               shadow-[0_8px_24px_rgba(226,123,163,0.18)]
@@ -481,7 +481,7 @@ const About = () => {
                   className="
                     w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center
                     bg-[#E27BA3] text-white
-                    hover:bg- [#D86A95] transition-colors
+                    hover:bg-[#D86A95] transition-colors
                     disabled:opacity-30 disabled:cursor-not-allowed
                   "
                 >
@@ -517,7 +517,7 @@ const About = () => {
                         ${
                           isOrange
                             ? "bg-[#E27BA3] text-white"
-                            : "bg-[#FBEAF1]text-[#374151] border border-[#EFE2E8]"
+                            : "bg-[#FBEAF1] text-[#374151] border border-[#EFE2E8]"
                         }
                       `}
                     >

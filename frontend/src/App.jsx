@@ -138,7 +138,7 @@ function App() {
           }
         />
 
-        {/* <Route
+        <Route
           path="/my-appointments"
           element={
             <ProtectedRoute>
@@ -153,25 +153,25 @@ function App() {
               <MyProfile />
             </ProtectedRoute>
           }
-        /> */}
+        />
 
-        {/* <Route
+        <Route
           path="/notifications"
           element={
             <ProtectedRoute>
               <CustomerNotifications />
             </ProtectedRoute>
           }
-        /> */}
+        />
 
-        <Route
+        {/* <Route
           path="/my-plans-and-billings"
           element={
             <ProtectedRoute>
               <MyPlansAndBillings />
             </ProtectedRoute>
           }
-        />
+        /> */}
 
         <Route
           path="/billing/receipt/:id"
@@ -190,19 +190,19 @@ function App() {
             </ProtectedRoute>
           }
         />
-        {/* <Route path="/programs/:id/tenure" element={<SelectTenure />} />
+        <Route path="/programs/:id/tenure" element={<SelectTenure />} />
         <Route path="/programs/:id/checkout" element={<ProgramCheckout />} />
         <Route path="/programs/:id/success" element={<ProgramSuccess />} />
-        <Route
+        {/* <Route
           path="/programs/:id/dashboard"
           element={
             <ProtectedProgramRoute>
               <ProgramDashboard />
             </ProtectedProgramRoute>
           }
-        />
+        /> */}
 
-        <Route
+        {/* <Route
           path="/programs/:id/add-progress"
           element={
             <ProtectedProgramRoute>

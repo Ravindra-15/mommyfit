@@ -202,14 +202,14 @@ function App() {
           }
         />
 
-        {/* <Route
+        <Route
           path="/programs/:id/add-progress"
           element={
             <ProtectedProgramRoute>
               <AddProgress />
             </ProtectedProgramRoute>
           }
-        /> */}
+        />
 
         <Route
           path="/programs/:id/progress-report"

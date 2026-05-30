@@ -120,9 +120,9 @@ export default function SubscriptionCallbackCTA({ programId }) {
           {/* Image */}
           <div className="flex justify-center sm:justify-end">
             <img
-              src="/images/subscriptioncallback.png"
+              src="/images/subscriptioncallbackgirl.png"
               alt="Speak with a specialist"
-              className="w-[220px] lg:w-[260px] h-auto object-contain rounded-2xl"
+              className="w-[280px] lg:w-[380px] h-auto object-contain rounded-2xl"
             />
           </div>
         </div>

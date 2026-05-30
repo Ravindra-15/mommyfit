@@ -8,7 +8,6 @@ import { getPublicProgramPlans } from "../../../../services/programPlanPublicSer
 
 const PROGRAM_ID = "mommyfit";
 
-// 🏷️ Hardcoded per-program feature bullets (MommyFit)
 const features = [
   "Community Sessions",
   "health activity tracking",
@@ -18,28 +17,21 @@ const features = [
 
 const formatPrice = (n) => `$${Number(n || 0).toLocaleString("en-US")}`;
 
-// 🧮 Monthly display price — handles both fixed and weekly plans
-const calcMonthlyPrice = (plan) => {
-  // Weekly plan: price at minWeeks, converted to per-month
+// 🧮 Returns { amount, unit, helper } based on plan type
+const getDisplayPrice = (plan) => {
+  if (!plan) return { amount: 0, unit: "/month", helper: "" };
+
+  // Weekly plan → show base rate per week
   if ((plan.pricingType || "fixed") === "weekly") {
     const base = Number(plan.baseRatePerWeek) || 0;
-    const weeks = Number(plan.minWeeks) || 1;
-
-    // best discount applicable at minWeeks
-    let discount = 0;
-    if (Array.isArray(plan.breakpoints)) {
-      plan.breakpoints.forEach((bp) => {
-        if (weeks >= bp.minWeeks && bp.discountPercent > discount) {
-          discount = bp.discountPercent;
-        }
-      });
-    }
-    const total = base * weeks * (1 - discount / 100);
-    const months = Math.max(1, Math.round(weeks / 4));
-    return Math.round(total / months);
+    return {
+      amount: base,
+      unit: "/week",
+      helper: `Starts from ${plan.minWeeks || 1} weeks`,
+    };
   }
 
-  // Fixed plan
+  // Fixed plan → per-month conversion
   let months = 1;
   if (plan.durationMonths && Number(plan.durationMonths) > 0) {
     months = Number(plan.durationMonths);
@@ -50,8 +42,9 @@ const calcMonthlyPrice = (plan) => {
     if (m) months = parseInt(m[1], 10);
     else if (w) months = Math.max(1, Math.round(parseInt(w[1], 10) / 4));
   }
-  if (months <= 0) return plan.offerPrice;
-  return Math.round(plan.offerPrice / months);
+  const amount =
+    months > 0 ? Math.round(plan.offerPrice / months) : plan.offerPrice;
+  return { amount, unit: "/month", helper: "" };
 };
 
 export default function PricingSection() {
@@ -86,9 +79,11 @@ export default function PricingSection() {
   const cheapestPlan =
     plans.length > 0
       ? [...plans].sort(
-          (a, b) => calcMonthlyPrice(a) - calcMonthlyPrice(b)
+          (a, b) => getDisplayPrice(a).amount - getDisplayPrice(b).amount
         )[0]
       : null;
+
+  const { amount, unit, helper } = getDisplayPrice(cheapestPlan);
 
   const handleGetStarted = () => {
     const intendedPath = `/programs/${PROGRAM_ID}/tenure`;
@@ -97,7 +92,6 @@ export default function PricingSection() {
   };
 
   const handleConnect = () => {
-    // 🔗 Scroll to callback section on landing
     const el = document.getElementById("callback");
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -115,7 +109,6 @@ export default function PricingSection() {
           </h2>
         </div>
 
-        {/* CARDS ROW */}
         {loading ? (
           <p className="text-center text-sm text-gray-400 py-10">
             Loading plans...
@@ -124,19 +117,22 @@ export default function PricingSection() {
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-5 sm:gap-6 items-stretch">
             {/* LEFT — Price + Features Card */}
             <div className="bg-white rounded-3xl border border-[#F0D9E2] px-6 sm:px-8 lg:px-10 py-7 sm:py-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 sm:gap-8">
-              {/* Price block */}
               <div className="flex flex-col items-start">
                 <div className="flex items-start">
                   <span className="text-[36px] sm:text-[42px] lg:text-[48px] font-bold text-[#0F172A] leading-none">
-                    {cheapestPlan
-                      ? formatPrice(calcMonthlyPrice(cheapestPlan))
-                      : "$0"}
+                    {cheapestPlan ? formatPrice(amount) : "$0"}
                   </span>
                   <span className="text-[12px] sm:text-[13px] text-[#475569] font-medium ml-1 mt-2">
-                    /month
+                    {unit}
                   </span>
                   <span className="text-red-500 text-xs ml-0.5 mt-1">*</span>
                 </div>
+
+                {helper && (
+                  <p className="text-[11px] sm:text-xs text-[#6B7280] mt-1">
+                    {helper}
+                  </p>
+                )}
 
                 <button
                   onClick={handleGetStarted}
@@ -146,7 +142,6 @@ export default function PricingSection() {
                 </button>
               </div>
 
-              {/* Features list */}
               <ul className="flex flex-col gap-2.5 sm:gap-3 w-full sm:w-auto">
                 {features.map((f) => (
                   <li

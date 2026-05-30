@@ -50,7 +50,7 @@ export default function FAQSection() {
             {/* IMAGE */}
             <div className="rounded-[40px] overflow-hidden">
               <img
-                src="/images/FAQdiab.png"
+                src="/images/faq-yoga.png"
                 alt="Yoga FAQ"
                 className="w-full h-[240px] sm:h-[320px] lg:h-[380px] object-cover"
               />

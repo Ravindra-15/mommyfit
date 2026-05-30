@@ -42,7 +42,7 @@ export default function ReferAndEarnPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FBEAF1]flex flex-col">
+    <div className="min-h-screen bg-[#FBEAF1] flex flex-col">
       <CustomerNavbar />
 
       <main className="flex-1 w-full">
@@ -50,7 +50,7 @@ export default function ReferAndEarnPage() {
           {/* ============================================ */}
           {/* 🎉 HERO BANNER                                 */}
           {/* ============================================ */}
-          <div className="relative overflow-hidden bg-white rounded-3xl border border-[#EFE2E8]px-6 sm:px-12 py-10 sm:py-14 mb-10">
+          <div className="relative overflow-hidden bg-white rounded-3xl border border-[#EFE2E8] px-6 sm:px-12 py-10 sm:py-14 mb-10">
             {/* Top-right decorative image */}
             <img
               src="/images/refernearn.png"
@@ -98,14 +98,14 @@ export default function ReferAndEarnPage() {
           {/* ============================================ */}
           {/* 🔗 UNIQUE REFERRAL LINK                       */}
           {/* ============================================ */}
-          <div className="bg-white rounded-3xl border border-[#EFE2E8]shadow-[0_10px_30px_rgba(15,23,42,0.05)] px-6 sm:px-10 py-10 sm:py-12 mb-10">
+          <div className="bg-white rounded-3xl border border-[#EFE2E8] shadow-[0_10px_30px_rgba(15,23,42,0.05)] px-6 sm:px-10 py-10 sm:py-12 mb-10">
             <h2 className="text-xl sm:text-3xl font-bold text-[#1F2937] text-center mb-10">
               Your Unique Referral Link
             </h2>
 
             <div className="max-w-2xl mx-auto">
               <div className="flex flex-col sm:flex-row items-stretch gap-3">
-                <div className="flex-1 flex items-center gap-2 px-5 py-4 bg-[#FBEAF1]border border-[#F0D9E2] rounded-full">
+                <div className="flex-1 flex items-center gap-2 px-5 py-4 bg-[#FBEAF1] border border-[#F0D9E2] rounded-full">
                   <Link2 size={18} className="text-gray-400 shrink-0" />
                   <span className="text-base text-[#374151] truncate">
                     {referralLink}

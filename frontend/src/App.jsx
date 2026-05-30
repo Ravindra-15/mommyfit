@@ -164,14 +164,14 @@ function App() {
           }
         />
 
-        {/* <Route
+        <Route
           path="/my-plans-and-billings"
           element={
             <ProtectedRoute>
               <MyPlansAndBillings />
             </ProtectedRoute>
           }
-        /> */}
+        />
 
         <Route
           path="/billing/receipt/:id"

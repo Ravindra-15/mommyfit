@@ -193,14 +193,14 @@ function App() {
         <Route path="/programs/:id/tenure" element={<SelectTenure />} />
         <Route path="/programs/:id/checkout" element={<ProgramCheckout />} />
         <Route path="/programs/:id/success" element={<ProgramSuccess />} />
-        {/* <Route
+        <Route
           path="/programs/:id/dashboard"
           element={
             <ProtectedProgramRoute>
               <ProgramDashboard />
             </ProtectedProgramRoute>
           }
-        /> */}
+        />
 
         {/* <Route
           path="/programs/:id/add-progress"

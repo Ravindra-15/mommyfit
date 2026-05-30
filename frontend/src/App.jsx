@@ -209,7 +209,7 @@ function App() {
               <AddProgress />
             </ProtectedProgramRoute>
           }
-        />
+        /> */}
 
         <Route
           path="/programs/:id/progress-report"
@@ -218,7 +218,7 @@ function App() {
               <ProgressReport />
             </ProtectedProgramRoute>
           }
-        /> */}
+        />
 
         {/* ============================================ */}
         {/* 🔐 ADMIN ROUTES */}

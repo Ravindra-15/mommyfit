@@ -72,6 +72,35 @@ const CustomerNavbar = () => {
 
   const closeMobile = () => setMobileOpen(false);
 
+  // Scroll to #programs after we've landed on /home
+  useEffect(() => {
+    if (location.pathname === "/home" && location.hash === "#programs") {
+      // wait a tick so the section is mounted
+      const id = setTimeout(() => {
+        document
+          .getElementById("programs")
+          ?.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+      return () => clearTimeout(id);
+    }
+  }, [location.pathname, location.hash]);
+
+  const handleProgramsClick = (e) => {
+    e.preventDefault();
+    closeMobile();
+    if (location.pathname === "/home") {
+      // already on home → just scroll
+      document
+        .getElementById("programs")
+        ?.scrollIntoView({ behavior: "smooth" });
+      // keep hash in sync (optional)
+      navigate("/home#programs", { replace: true });
+    } else {
+      // different page → navigate, effect above handles the scroll
+      navigate("/home#programs");
+    }
+  };
+
   // ============================================
   // ✅ CLOSE ON SCROLL
   // ============================================
@@ -129,18 +158,19 @@ const CustomerNavbar = () => {
                   <a
                     key={link.to}
                     href={link.to}
+                    onClick={handleProgramsClick}
                     className="
-                      relative text-sm font-medium tracking-wide
-                      text-[#6B7280] hover:text-[#E27BA3]
-                      transition-all duration-300
-                      hover:-translate-y-[1px]
-                      after:absolute after:left-0 after:-bottom-1
-                      after:h-[2px] after:w-0
-                      after:bg-[#E27BA3]
-                      after:rounded-full
-                      after:transition-all after:duration-300
-                      hover:after:w-full
-                    "
+        relative text-sm font-medium tracking-wide
+        text-[#6B7280] hover:text-[#E27BA3]
+        transition-all duration-300
+        hover:-translate-y-[1px]
+        after:absolute after:left-0 after:-bottom-1
+        after:h-[2px] after:w-0
+        after:bg-[#E27BA3]
+        after:rounded-full
+        after:transition-all after:duration-300
+        hover:after:w-full
+      "
                   >
                     {link.label}
                   </a>
@@ -242,8 +272,14 @@ const CustomerNavbar = () => {
                   <a
                     key={link.to}
                     href={link.to}
-                    onClick={closeMobile}
-                    className="px-3 py-2 rounded-lg text-sm font-medium text-[#374151] hover:bg-[#FBEAF1 ]"
+                    onClick={handleProgramsClick}
+                    className="
+                      px-3 py-2 rounded-lg text-sm font-medium
+                      text-[#6B7280]
+                      hover:bg-[#FDF0F5]
+                      hover:text-[#E27BA3]
+                      transition-all duration-300
+                    "
                   >
                     {link.label}
                   </a>
@@ -312,7 +348,7 @@ const CustomerNavbar = () => {
           </div>
         )}
       </header>
-       <div className="h-16" />
+      <div className="h-16" />
     </div>
   );
 };

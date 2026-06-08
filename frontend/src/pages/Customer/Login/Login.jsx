@@ -76,7 +76,7 @@ const Login = () => {
   // const [remember, setRemember] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
+  const [errors, setErrors] = useState({ email: false, password: false });
   // ============================================
   // 📝 HANDLE CHANGE
   // ============================================
@@ -87,6 +87,8 @@ const Login = () => {
       ...form,
       [name]: name === "email" ? value.toLowerCase().trim() : value,
     });
+
+    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: false }));
   };
 
   // ============================================
@@ -94,6 +96,10 @@ const Login = () => {
   // ============================================
   const handleLogin = async () => {
     if (!form.email || !form.password) {
+      setErrors({
+        email: !form.email,
+        password: !form.password,
+      });
       return toast.error("All fields are required");
     }
 
@@ -183,7 +189,11 @@ const Login = () => {
               name="email"
               value={form.email}
               onChange={handleChange}
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 text-[14px] font-normal outline-none focus:border-[#E27BA3]"
+              className={`w-full border rounded-xl px-4 py-3 text-[14px] font-normal outline-none transition-colors ${
+                errors.email
+                  ? "border-red-400 focus:border-red-500"
+                  : "border-gray-300 focus:border-[#E27BA3]"
+              }`}
             />
 
             {/* PASSWORD */}
@@ -194,7 +204,11 @@ const Login = () => {
                 name="password"
                 value={form.password}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-[14px] font-normal outline-none focus:border-[#E27BA3]"
+                className={`w-full border rounded-xl px-4 py-3 text-[14px] font-normal outline-none transition-colors ${
+                  errors.password
+                    ? "border-red-400 focus:border-red-500"
+                    : "border-gray-300 focus:border-[#E27BA3]"
+                }`}
               />
 
               <button
@@ -223,9 +237,13 @@ const Login = () => {
               </span>
             </div> */}
 
+           
             {/* FORGOT PASSWORD */}
             <div className="flex justify-end text-[13px]">
-              <span className="text-[#E27BA3] hover:underline cursor-pointer">
+              <span
+                onClick={() => navigate("/forgot-password")}
+                className="text-[#E27BA3] hover:underline cursor-pointer"
+              >
                 Forgot password?
               </span>
             </div>

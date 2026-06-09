@@ -78,8 +78,8 @@ const StepIndicator = ({ currentStep }) => (
                   isCompleted
                     ? "bg-[#E27BA3] border-indigo-600 text-white"
                     : isActive
-                    ? "bg-[#E27BA3] border-indigo-600 text-white shadow-[0_6px_18px_rgba(79,70,229,0.35)]"
-                    : "bg-white border-gray-200 text-gray-300"
+                      ? "bg-[#E27BA3] border-indigo-600 text-white shadow-[0_6px_18px_rgba(79,70,229,0.35)]"
+                      : "bg-white border-gray-200 text-gray-300"
                 }
               `}
             >
@@ -93,11 +93,7 @@ const StepIndicator = ({ currentStep }) => (
               className={`
                 mt-2.5 text-[11px] sm:text-xs font-semibold text-center
                 leading-tight max-w-[110px]
-                ${
-                  isActive || isCompleted
-                    ? " text-[#E27BA3]"
-                    : "text-gray-400"
-                }
+                ${isActive || isCompleted ? " text-[#E27BA3]" : "text-gray-400"}
               `}
             >
               {step.title}
@@ -127,8 +123,13 @@ const BodyProfileWizard = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { profile, loading: profileLoading, saving, save, complete } =
-    useMyBodyProfile();
+  const {
+    profile,
+    loading: profileLoading,
+    saving,
+    save,
+    complete,
+  } = useMyBodyProfile();
 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({});
@@ -195,8 +196,10 @@ const BodyProfileWizard = () => {
     const result = await complete(formData);
     if (!result) return;
 
-    toast.success("Body profile completed!");
-    navigate("/my-appointments");
+    // toast.success("Body profile completed!");
+    // if user came from checkout, send them back to finish booking
+    const from = new URLSearchParams(location.search).get("from");
+    navigate(from === "checkout" ? "/checkout" : "/my-appointments");
   };
 
   const currentMeta = STEPS[step - 1];

@@ -12,6 +12,8 @@ import { Link } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
 import { googleAuth } from "../../services/authService";
 import { useAuth } from "../../context/AuthContext";
+import { hasActiveProgramSubscription } from "../../utils/subscriptionCheck";
+import { PROGRAM_ID } from "../../utils/programConfig";
 
 /* Icons */
 const EyeOpen = () => (
@@ -128,13 +130,29 @@ const Signup = () => {
       const profileStepOneComplete = user?.fullName && user?.nickName;
       const profileStepTwoComplete = user?.dob && user?.country && user?.city;
 
-      setTimeout(() => {
+      // preserve next (e.g. tenure) through profile steps
+      const stepOneUrl = nextPath
+        ? `/profile-step-1?next=${encodeURIComponent(nextPath)}`
+        : "/profile-step-1";
+      const stepTwoUrl = nextPath
+        ? `/profile-step-2?next=${encodeURIComponent(nextPath)}`
+        : "/profile-step-2";
+
+      // decide destination: next wins, else dashboard if subscribed, else landing
+      const resolveDestination = async () => {
+        if (nextPath?.startsWith("/")) return nextPath;
+        const subscribed = await hasActiveProgramSubscription();
+        return subscribed ? `/programs/${PROGRAM_ID}/dashboard` : "/";
+      };
+
+      setTimeout(async () => {
         if (!profileStepOneComplete) {
-          navigate("/profile-step-1");
+          navigate(stepOneUrl);
         } else if (!profileStepTwoComplete) {
-          navigate("/profile-step-2");
+          navigate(stepTwoUrl);
         } else {
-          navigate("/book-doctor", { replace: true });
+          const dest = await resolveDestination();
+          navigate(dest, { replace: true });
         }
       }, 300);
     } catch (err) {
@@ -146,7 +164,8 @@ const Signup = () => {
   };
 
   const googleLogin = useGoogleLogin({
-    onSuccess: (tokenResponse) => handleGoogleSuccess(tokenResponse.access_token),
+    onSuccess: (tokenResponse) =>
+      handleGoogleSuccess(tokenResponse.access_token),
     onError: () => toast.error("Google sign-in failed"),
   });
 
@@ -157,10 +176,10 @@ const Signup = () => {
       <div className="flex flex-col md:flex-row items-center justify-between px-6 md:px-20 pt-24 md:pt-28 pb-10 md:pb-16 gap-10 md:gap-0">
         {/* LEFT */}
         <div className="max-w-md mx-auto md:mx-0 text-center md:text-left px-2">
-         <h1 className="text-[38px] md:text-[52px] font-semibold text-teal-900 leading-[1.15]">
-  Your Wellness <br />
-  <span className="text-[#E27BA3]">Journey Begins</span>
-</h1>
+          <h1 className="text-[38px] md:text-[52px] font-semibold text-teal-900 leading-[1.15]">
+            Your Wellness <br />
+            <span className="text-[#E27BA3]">Journey Begins</span>
+          </h1>
           <p className="mt-4 text-[#6B7280] text-[20px] leading-[1.6] max-w-[420px] mx-auto md:mx-0">
             Join thousands building sustainable health habits through
             expert-guided programs
@@ -279,14 +298,16 @@ const Signup = () => {
             <p className="text-[13px] text-[#6B7280] text-center mt-2">
               Already have an account?{" "}
               <Link
-                to="/login"
-                className="text-[#E27BA3] font-medium hover:underline"
+                to={
+                  nextPath
+                    ? `/login?next=${encodeURIComponent(nextPath)}`
+                    : "/login"
+                }
+                className="text-[#EC4899] font-medium hover:underline"
               >
                 Log in
               </Link>
             </p>
-
-            
           </div>
         </div>
       </div>

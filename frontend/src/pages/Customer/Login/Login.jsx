@@ -9,6 +9,8 @@ import { useAuth } from "../../../context/AuthContext";
 
 import { useGoogleLogin } from "@react-oauth/google";
 import { googleAuth } from "../../../services/authService";
+import { hasActiveProgramSubscription } from "../../../utils/subscriptionCheck";
+import { PROGRAM_ID } from "../../../utils/programConfig";
 
 import toast from "react-hot-toast";
 import axios from "axios";
@@ -135,18 +137,31 @@ const Login = () => {
       const profileStepOneComplete = user?.fullName && user?.nickName;
       const profileStepTwoComplete = user?.dob && user?.country && user?.city;
 
-      // Small delay so toast lifecycle isn't disrupted by route change
-      setTimeout(() => {
+      // preserve next through profile-step redirects so tenure flow survives
+      const stepOneUrl = next
+        ? `/profile-step-1?next=${encodeURIComponent(next)}`
+        : "/profile-step-1";
+      const stepTwoUrl = next
+        ? `/profile-step-2?next=${encodeURIComponent(next)}`
+        : "/profile-step-2";
+
+      // decide final destination once profile is complete
+      const resolveDestination = async () => {
+        // explicit next (e.g. tenure/pricing) always wins
+        if (next?.startsWith("/")) return next;
+        // else: subscribed users land on dashboard, others on landing
+        const subscribed = await hasActiveProgramSubscription();
+        return subscribed ? `/programs/${PROGRAM_ID}/dashboard` : "/";
+      };
+
+      setTimeout(async () => {
         if (!profileStepOneComplete) {
-          navigate("/profile-step-1");
+          navigate(stepOneUrl);
         } else if (!profileStepTwoComplete) {
-          navigate("/profile-step-2");
+          navigate(stepTwoUrl);
         } else {
-          // 🎉 Trigger welcome popup on book-doctor page
-          sessionStorage.removeItem("welcomeShown");
-          navigate(next?.startsWith("/") ? next : "/book-doctor", {
-            replace: true,
-          });
+          const dest = await resolveDestination();
+          navigate(dest, { replace: true });
         }
       }, 300);
     } catch (err) {
@@ -180,15 +195,27 @@ const Login = () => {
       const profileStepOneComplete = user?.fullName && user?.nickName;
       const profileStepTwoComplete = user?.dob && user?.country && user?.city;
 
-      setTimeout(() => {
+      const stepOneUrl = next
+        ? `/profile-step-1?next=${encodeURIComponent(next)}`
+        : "/profile-step-1";
+      const stepTwoUrl = next
+        ? `/profile-step-2?next=${encodeURIComponent(next)}`
+        : "/profile-step-2";
+
+      const resolveDestination = async () => {
+        if (next?.startsWith("/")) return next;
+        const subscribed = await hasActiveProgramSubscription();
+        return subscribed ? `/programs/${PROGRAM_ID}/dashboard` : "/";
+      };
+
+      setTimeout(async () => {
         if (!profileStepOneComplete) {
-          navigate("/profile-step-1");
+          navigate(stepOneUrl);
         } else if (!profileStepTwoComplete) {
-          navigate("/profile-step-2");
+          navigate(stepTwoUrl);
         } else {
-          navigate(next?.startsWith("/") ? next : "/book-doctor", {
-            replace: true,
-          });
+          const dest = await resolveDestination();
+          navigate(dest, { replace: true });
         }
       }, 300);
     } catch (err) {
@@ -200,7 +227,8 @@ const Login = () => {
   };
 
   const googleLogin = useGoogleLogin({
-    onSuccess: (tokenResponse) => handleGoogleSuccess(tokenResponse.access_token),
+    onSuccess: (tokenResponse) =>
+      handleGoogleSuccess(tokenResponse.access_token),
     onError: () => toast.error("Google sign-in failed"),
   });
 
@@ -286,7 +314,6 @@ const Login = () => {
               </span>
             </div> */}
 
-           
             {/* FORGOT PASSWORD */}
             <div className="flex justify-end text-[13px]">
               <span
@@ -333,8 +360,12 @@ const Login = () => {
             {/* SIGNUP */}
             <p className="text-[13px] text-[#6B7280] text-center mt-2">
               Don't have an account?{" "}
+            
               <Link
-                to="/signup"
+                to={(() => {
+                  const n = new URLSearchParams(location.search).get("next");
+                  return n ? `/signup?next=${encodeURIComponent(n)}` : "/signup";
+                })()}
                 className="text-[#E27BA3] font-medium hover:underline"
               >
                 Sign up

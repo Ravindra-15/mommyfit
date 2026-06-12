@@ -275,11 +275,7 @@ const CustomerNavbar = () => {
                       after:h-[2px] after:w-0
                       after:bg-[#E27BA3] after:rounded-full
                       after:transition-all after:duration-300
-                      hover:after:w-full ${
-                        isActive
-                          ? "text-[#083B44] hover:text-[#E27BA3]"
-                          : "text-[#6B7280] hover:text-[#E27BA3]"
-                      }`
+                     hover:after:w-full text-[#6B7280] hover:text-[#E27BA3]`
                     }
                   >
                     {link.label}
@@ -299,7 +295,7 @@ const CustomerNavbar = () => {
                       `hidden sm:inline-flex w-10 h-10 rounded-full items-center justify-center transition-colors ${
                         isActive
                           ? "bg-teal-50 text-[#083B44]"
-                          : "text-[#6B7280] hover:bg-[#FBEAF1 ]"
+                          : "text-[#6B7280] hover:bg-[#FBEAF1]"
                       }`
                     }
                     aria-label="Notifications"
@@ -344,7 +340,7 @@ const CustomerNavbar = () => {
               <button
                 type="button"
                 onClick={() => setMobileOpen((v) => !v)}
-                className="lg:hidden w-10 h-10 rounded-lg flex items-center justify-center text-[#6B7280] hover:bg-[#FBEAF1 ]"
+                className="lg:hidden w-10 h-10 rounded-lg flex items-center justify-center text-[#6B7280] hover:bg-[#FBEAF1]"
                 aria-label="Toggle menu"
               >
                 {mobileOpen ? <X size={20} /> : <Menu size={20} />}
@@ -355,48 +351,16 @@ const CustomerNavbar = () => {
 
         {/* 📱 MOBILE DRAWER */}
         {mobileOpen && (
-          <div className="lg:hidden border-t border-[#EFE2E8]bg-white">
+          <div className="lg:hidden border-t border-[#EFE2E8] bg-white">
             <div className="px-4 py-3 flex flex-col gap-1">
-              {/* {links.map((link) =>
-                link.to.includes("#") ? (
-                  <a
-                    key={link.to}
-                    href={link.to}
-                    onClick={handleProgramsClick}
-                    className="
-                      px-3 py-2 rounded-lg text-sm font-medium
-                      text-[#6B7280]
-                      hover:bg-[#FDF0F5]
-                      hover:text-[#E27BA3]
-                      transition-all duration-300
-                    "
-                  >
-                    {link.label}
-                  </a>
-                ) : (
-                  <NavLink
-                    key={link.to}
-                    to={link.to}
-                    onClick={closeMobile}
-                    className={({ isActive }) =>
-                      `px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                        isActive
-                          ? "bg-[#FDF0F5] text-[#E27BA3]"
-                          : "text-[#374151] hover:bg-[#FBEAF1 ]"
-                      }`
-                    }
-                  >
-                    {link.label}
-                  </NavLink>
-                ),
-              )} */}
+          
               {links.map((link) =>
                 link.isAddProgress ? (
                   <a
                     key="add-progress-m"
                     href={link.to}
                     onClick={handleAddProgressClick}
-                    className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-teal-50 hover:text-teal-700 transition-all duration-300"
+                    className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-[#FBEAF1] hover:text-[#E27BA3] transition-all duration-300"
                   >
                     {link.label}
                   </a>
@@ -405,7 +369,7 @@ const CustomerNavbar = () => {
                     key="home-mobile"
                     href={link.to}
                     onClick={handleHomeClick}
-                    className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-teal-50 hover:text-teal-700 transition-all duration-300"
+                    className="px-3 py-2 rounded-lg text-sm font-medium text-gray-600 hover:bg-[#FBEAF1] hover:text-[#E27BA3] transition-all duration-300"
                   >
                     {link.label}
                   </a>
@@ -429,13 +393,7 @@ const CustomerNavbar = () => {
                     key={link.to}
                     to={link.to}
                     onClick={closeMobile}
-                    className={({ isActive }) =>
-                      `px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                        isActive
-                          ? "bg-[#FDF0F5] text-[#E27BA3]"
-                          : "text-gray-700 hover:bg-gray-50"
-                      }`
-                    }
+                    className="px-3 py-2 rounded-lg text-sm font-medium transition-colors text-gray-700 hover:bg-gray-50"
                   >
                     {link.label}
                   </NavLink>
@@ -461,7 +419,7 @@ const CustomerNavbar = () => {
                     className="
                       mt-1 px-4 py-2 rounded-full self-start
                       text-xs font-semibold text-white
-                      bg-[#E27BA3] hover:bg- [#D86A95]
+                      bg-[#E27BA3] hover:bg-[#D86A95]
                       transition-colors
                     "
                   >

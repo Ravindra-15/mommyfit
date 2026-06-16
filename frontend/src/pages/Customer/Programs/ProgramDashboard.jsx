@@ -3,7 +3,7 @@
 // Uses real clinical videos from admin CMS + real upcoming appointment
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useParams, useNavigate, useSearchParams } from "react-router-dom";
-import { Play, Check, Plus, Bell, Calendar, ChevronUp, Stethoscope, Lock, Gift } from "lucide-react";
+import { Play, Check, Plus, Bell, Calendar, ChevronUp, Stethoscope, Lock, Gift, Video } from "lucide-react";
 import HabitTrackerForm from "./components/HabitTrackerForm";
 import toast from "react-hot-toast";
 
@@ -529,7 +529,7 @@ export default function ProgramDashboard() {
           </div>
 
           {/* 📅 UPCOMING APPOINTMENT (any booking) */}
-          <div className="bg-white rounded-[28px] border border-[#EFE2E8] shadow-[0_10px_30px_rgba(15,23,42,0.05)] p-6">
+          {/* <div className="bg-white rounded-[28px] border border-[#EFE2E8] shadow-[0_10px_30px_rgba(15,23,42,0.05)] p-6">
             <div className="flex items-center gap-2 mb-4">
               <div className="w-7 h-7 bg-[#FBF3F7] rounded-lg flex items-center justify-center">
                 <Calendar size={15} className="text-[#E27BA3]" />
@@ -568,7 +568,7 @@ export default function ProgramDashboard() {
                 </p>
               </div>
             )}
-          </div>
+          </div> */}
 
           {/* 🩺 FREE DOCTOR CONSULTATIONS (plan benefit) */}
           <div className="bg-white rounded-[28px] border border-[#EFE2E8] shadow-[0_10px_30px_rgba(15,23,42,0.05)] p-5 sm:p-6">
@@ -630,9 +630,15 @@ export default function ProgramDashboard() {
                       );
                     }
 
-                    if (appt) {
+                     if (appt) {
                       const isCancelled = appt.status === "cancelled";
                       const isCompleted = appt.status === "completed";
+                      // show Join only for active (not cancelled/completed) bookings with a sent link
+                      const canJoin =
+                        !isCancelled &&
+                        !isCompleted &&
+                        !!appt.meetingLink &&
+                        !!appt.meetingLinkSentAt;
                       const tone = isCancelled
                         ? { border: "border-gray-200", bg: "bg-gray-50", icon: "bg-gray-100", iconColor: "text-gray-400", badge: "text-gray-500 bg-gray-100", label: "Cancelled" }
                         : isCompleted
@@ -649,10 +655,10 @@ export default function ProgramDashboard() {
                               <Calendar size={16} className={tone.iconColor} />
                             </div>
                             <div className="min-w-0 flex-1">
-                              <p className={`text-sm font-bold truncate ${isCancelled ? "text-gray-500 line-through" : "text-[#1F2937]"}`}>
+                              <p className={`text-sm font-bold truncate ${isCancelled ? "text-gray-500 line-through" : "text-gray-800"}`}>
                                 {appt.doctorName || appt.doctor?.fullName || "Doctor"}
                               </p>
-                              <p className="text-xs text-[#6B7280] mt-0.5">
+                              <p className="text-xs text-gray-500 mt-0.5">
                                 {formatAppointmentDate(appt.scheduledAt)}
                               </p>
                             </div>
@@ -660,6 +666,33 @@ export default function ProgramDashboard() {
                               {tone.label}
                             </span>
                           </div>
+
+                          {/* 🔗 meeting link + Join Now (once doctor sends it) */}
+                          {canJoin && (
+                            <div className="mt-3 pt-3 border-t border-emerald-100 space-y-2">
+                              <div className="flex items-center gap-1.5 text-[11px] text-gray-500">
+                                <Video size={12} className="text-[#E27BA3] shrink-0" />
+                                <a
+                                  href={appt.meetingLink}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="text-[#E27BA3] text-xs hover:underline truncate"
+                                  title={appt.meetingLink}
+                                >
+                                  {appt.meetingLink}
+                                </a>
+                              </div>
+                              <a
+                                href={appt.meetingLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-full text-xs font-semibold text-white bg-[#E27BA3] hover:bg-[#D86A95] transition-colors shadow-[0_4px_10px_rgba(249,115,22,0.25)]"
+                              >
+                                <Video size={12} />
+                                Join Now
+                              </a>
+                            </div>
+                          )}
                         </div>
                       );
                     }

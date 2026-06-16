@@ -376,7 +376,7 @@ const Login = () => {
       </div>
 
       {/* 💬 WHATSAPP FLOATING BUTTON */}
-      <a
+      {/* <a
         href="https://wa.me/919876543210"
         target="_blank"
         rel="noopener noreferrer"
@@ -395,7 +395,7 @@ const Login = () => {
         <WhatsAppIcon />
 
         <span className="hidden sm:inline">Chat With Us !</span>
-      </a>
+      </a> */}
     </div>
   );
 };

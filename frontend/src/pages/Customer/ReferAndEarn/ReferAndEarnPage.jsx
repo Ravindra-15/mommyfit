@@ -27,6 +27,9 @@ export default function ReferAndEarnPage() {
 
   const [copied, setCopied] = useState(false);
   const [referralCode, setReferralCode] = useState("");
+  // 🚫 max-rewards limit — blocks further sharing and shows a popup
+  const [limit, setLimit] = useState({ reached: false, max: 24 });
+  const [showLimitModal, setShowLimitModal] = useState(false);
   const [stats, setStats] = useState({
     invitesSent: 0,
     friendsJoined: 0,
@@ -41,6 +44,10 @@ export default function ReferAndEarnPage() {
         const data = await fetchMyReferral();
         setReferralCode(data?.referralCode || "");
         if (data?.stats) setStats(data.stats);
+        setLimit({
+          reached: !!data?.limitReached,
+          max: data?.maxRewards || 24,
+        });
       } catch {
         // soft fail — page still renders with empty values
       }
@@ -53,6 +60,7 @@ export default function ReferAndEarnPage() {
     : "Generating your link...";
 
   const handleCopy = async () => {
+    if (limit.reached) return setShowLimitModal(true);
     try {
       await navigator.clipboard.writeText(referralLink);
       setCopied(true);
@@ -64,8 +72,9 @@ export default function ReferAndEarnPage() {
   };
 
   const handleWhatsAppShare = () => {
+    if (limit.reached) return setShowLimitModal(true);
     const message = encodeURIComponent(
-      `Hey! Join Zealtho with my referral and get 30 days of Mommyfit free: ${referralLink}`,
+      `Hey! Join Zealtho with my referral and get 30 days of Yoga T20 free: ${referralLink}`,
     );
     window.open(`https://wa.me/?text=${message}`, "_blank");
   };
@@ -113,12 +122,12 @@ export default function ReferAndEarnPage() {
                 <StepCircle
                   icon={Trophy}
                   title="Your friend gets 30"
-                  subtitle="Days of Mommyfit"
+                  subtitle="Days of Yoga T20"
                 />
                 <StepCircle
                   icon={Users}
                   title="You receive 30 Days of"
-                  subtitle="Mommyfit Subscription"
+                  subtitle="Yoga T20 Subscription"
                 />
               </div>
             </div>
@@ -217,6 +226,38 @@ export default function ReferAndEarnPage() {
       </main>
 
       <CustomerFooter />
+
+      {/* 🚫 Referral limit reached popup */}
+      {showLimitModal && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/50 flex items-center justify-center px-4"
+          onClick={() => setShowLimitModal(false)}
+        >
+          <div
+            role="dialog"
+            aria-modal="true"
+            className="bg-white rounded-3xl w-full max-w-md p-8 text-center shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="w-14 h-14 rounded-full bg-[#FBF3F7] flex items-center justify-center mx-auto mb-4">
+              <Trophy size={22} className="text-[#E27BA3]" />
+            </div>
+            <h3 className="text-2xl font-bold text-[#1F2937] mb-2">
+              Referral limit reached
+            </h3>
+            <p className="text-[#6B7280] text-sm sm:text-base mb-6">
+              Thank you for reaching the maximum referral limit of {limit.max}{" "}
+              members.
+            </p>
+            <button
+              onClick={() => setShowLimitModal(false)}
+              className="w-full px-6 py-3 bg-[#E27BA3] hover:bg-[#D86A95] text-white text-sm font-semibold rounded-full shadow-[0_4px_14px_rgba(226,123,163,0.3)] transition-colors"
+            >
+              Got it
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

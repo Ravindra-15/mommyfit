@@ -5,7 +5,10 @@ import { useEffect } from "react";
 
 import { useLocation } from "react-router-dom";
 
-import { captureReferralFromUrl } from "../../../utils/referral";
+import {
+  captureReferralFromUrl,
+  scrollToPricingOnReferral,
+} from "../../../utils/referral";
 import CustomerNavbar from "../../../components/customer/layout/CustomerNavbar";
 import CustomerFooter from "../../../components/customer/layout/CustomerFooter";
 import HeroSection from "./sections/HeroSection";
@@ -24,9 +27,11 @@ import TrackDailyWinsSection from "./sections/TrackDailyWinsSection";
 import ExpertSupportSection from "./sections/ExpertSupportSection";
 import WhatWomenGoThroughSection from "./sections/WhatWomenGoThroughSection";
 export default function LandingPage() {
-  // 🔗 capture ?ref= referral code from the URL on landing
+  // 🔗 capture ?ref= referral code from the URL on landing,
+  // then take referral visitors straight to the pricing section
   useEffect(() => {
     captureReferralFromUrl();
+    return scrollToPricingOnReferral();
   }, []);
 
   const location = useLocation();

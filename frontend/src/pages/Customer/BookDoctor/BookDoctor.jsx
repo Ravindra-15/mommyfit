@@ -285,7 +285,9 @@ const BookDoctor = () => {
       <Modal isOpen={open} onClose={() => setOpen(false)}>
         <div className="text-center px-2">
           <h2 className="text-2xl font-bold  text-[#2D3D4A]mb-4">
-            Welcome to MommyFit
+            {user?.fullName || user?.nickName
+              ? `Hello, ${user.fullName || user.nickName}!`
+              : "Welcome to MommyFit"}
           </h2>
           {/* 👤 Avatar — clickable to upload */}
           <div className="flex flex-col items-center mb-5">

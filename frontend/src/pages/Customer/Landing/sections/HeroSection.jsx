@@ -66,7 +66,7 @@ export default function HeroSection() {
             </div>
 
             {/* RIGHT — CTAs */}
-            <div className="flex flex-col gap-4 sm:gap-5 w-full max-w-[340px] mx-auto lg:mx-0 lg:ml-auto order-3">
+            <div className="relative z-10 flex flex-col gap-4 sm:gap-5 w-full max-w-[340px] mx-auto lg:mx-0 lg:ml-auto order-3">
               <button
                 onClick={handleStartJourney}
                 className="bg-[#E27BA3] hover:bg-[#D86A95] text-white text-[15px] sm:text-[17px] font-semibold px-8 py-4 sm:py-5 rounded-full shadow-[0_10px_30px_rgba(226,123,163,0.35)] transition-all"
